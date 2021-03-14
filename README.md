@@ -31,18 +31,19 @@ TEST 1:
 TEST 2:
 In Matlab one can play the sound file using “sound”. Record the sampling rate and compute how
 many milliseconds of speech are contained in a block of 256 samples? 
-
+sampling rate = 12.5k Hz
+frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
 Now plot the signal to view it in the time domain. It should be obvious that the raw data are long and may need to be normalized
 because of different strengths.
-
+( insert plot here or reference above to report)
 
 
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
 (msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
 and 512. In each case, set the frame increment M to be about N/3.
 
-
+create table
 
 
 TEST 3:
