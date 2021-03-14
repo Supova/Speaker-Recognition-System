@@ -12,11 +12,13 @@ Dataset used
 Your own computer program and clear instructions how to execute the program;
 Separate demonstration (tests) and resutls as required in the final project description. 
 1st Github link needs to be submitted by Tuesday 12noon March 16th that contains preliminary works (submit by text on the same final project assignment text entry). 
+
 (b) Each group need to prepare a group report as required 
 
 The report must be accessible at Github
 The report must explains in detail your approaches, your tests, your results, AND your unique efforts
 The 1st draft of the group report must be submit by Thursday 11:59PM. (Submit by text on the same final project assignment text entry on link to the Github file as 1st report draft). 
+
 (c) Each group must prepare a video presentation of 12-15 minutes to explain the project (coupled with the project report) 
 
 The video must be in mp4 format and may be recorded using zoom, quicktime, or any software.
