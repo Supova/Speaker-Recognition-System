@@ -1,29 +1,33 @@
-% for mfcc
+function [output, t] = mfcc(s, fs, N, p, M) %% fix this
+% s - Audio vector (assuming 1-channel/mono-channel)
+% fs - Sampling Frequency
+% N - Number of elements in Hamming window for stft()
+% p - Number of filters in the filter bank for melfb
+% M - overlap length for stft()
 
-clear; clc;
-
-% reading the audio signal
-[sig,fs] = audioread('s1.wav');
-
-% Frame Blocking
-N = length(sig); %total num of samples
-ts=0.01; %Frame step in seconds
-frame_step=floor(ts*fs); %Frame step in samples
-frame_duration=0.03; %Frame duration in seconds (30 ms)
-frame_length=ceil(frame_duration*fs); %Number of samples per frame
-
-for K = 1 : size(sig,2)
-    y{K} = buffer(sig(:,K), frame_length, frame_step);
+    % using MATLAB's stft function to frame, window, and take fft
+    [s,f,t] = stft(s, fs, 'Window', hamming(N), 'OverlapLength', M);
+    
+    % Mel-frequency Wrapping using filter banks
+    m = melfb(p, N, fs)
+    
+    % taking the positive half of the stft due to symmetry
+    s = s((N/2):end, :)
+    
+    % convert amplitude to dB 
+    s = mag2db(abs(s));
+    
+    % mel filter bank output
+    mel_output = m*s
+    
+    % discrete cosine transform
+    output = dct(mel_output)
+    
+    
+   
+    
+    % Step 6: Plot the amplitude output of the dct
+    %plotSpec(ystt, 1:p, cn); caxis([-30 15]);
+    %xlim([min(ystt), max(ystt)]); ylim([1 p]);
+    %xlabel('Time (s)'); ylabel('mfc coefficients')
 end
-
-y = cell2mat(y);
-
-% Reference for frame blocking: 
-% https://www.mathworks.com/matlabcentral/answers/230815-how-can-i-divide-an-audio-signal-into-overlap-frames-and-take-fft-to-the-signal
-
-% Windowing
-hamwin = hamming(N+1)';
-y_win = y.*hamwin;
-
-% FFT
-yfft = fft(y_win);
