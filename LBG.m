@@ -3,7 +3,7 @@ function codebook = LBG(feature, M)
 epsilon = 0.01;
 
 % initializing single-vector codebook
-codebook = mean(feature, 1);
+codebook = mean(feature,2);
 centroid = 1;
 D = 1;
 
@@ -14,12 +14,10 @@ while centroid < M
     
     % calculating yn+ and yn-
     if centroid == 1
-            temp(:,0) = codebook*(1+epsilon);
-            temp(:,1) = codebook*(1-epsilon);
+            temp = [codebook*(1+epsilon), codebook*(1-epsilon)];
     else   
             for i = 0:range(centroid)
-                temp(:,2*i) = codebook(:,i) * (1+eps);
-                temp(:,2*i+1) = codebook(:,i) * (1-eps);   
+                temp = [codebook(:,i) * (1+epsilon), codebook(:,i) * (1-epsilon)];   
             end 
     end 
     
@@ -34,11 +32,11 @@ while abs(D) > epsilon
     
     % nearest neighbour search
     prev_distance = mean(d);
-    nearest_codebook = min(d,axis == 1);
+    nearest_codebook = min(d, [], 2);
     
     % cluster vectors and find new centroid
     for i = 0:range(centroid)
-        codebook(:,i) = mean(feature(:,nearest_codebook == i), 2);
+        codebook(:,i) = mean(feature(:, nearest_codebook == i), 2);
     end 
       
     % updating centroid
