@@ -38,6 +38,44 @@ plot_ceptrum(timeVec_1, MFCC_1, p, 1)
 
 
 
+
+
+
+
+
+
+
+
+
+function scaled_Sig = ampNormalize(signal, maxAmp)
+%     Normalize or scale the amplitude to a value specified
+% 
+%     Input Parameters : 
+%                signal       Input signal
+%                maxAmp       Expected peak value (0 ~ 1)
+%     Output Parameters:  
+%                out      Scaled signal
+
+    % preallocate scaled signal vector
+    scaled_Sig = zeros(length(signal),1);
+    
+    % if the maximum amplitude is greater than 1 or is a negative valuem then throw error
+    if( maxAmp > 1 || maxAmp < 0 )
+        fprintf('(ampMax) out of bound.');
+    else
+    % scale appropriately by max and min of signal
+        if max(signal) > abs(min(signal))
+            scaled_Sig = signal*(maxAmp/max(signal));
+        else
+            scaled_Sig = signal*((-maxAmp)/min(signal));
+        end
+    end
+
+end
+
+
+
+% plot the MFCC coefficents 
 function plot_ceptrum(timeVec, MFCCcoef, p, speaker_id)
     figure; 
     surf(timeVec, 1:p, MFCCcoef,'EdgeColor','none'); 
@@ -45,6 +83,7 @@ function plot_ceptrum(timeVec, MFCCcoef, p, speaker_id)
     colorbar;
     xlim([min(timeVec), max(timeVec)]); 
     ylim([1 p]);
-    xlabel('Time (s)'); ylabel('Ceptral Coefficients');
+    xlabel('Time (s)'); 
+    ylabel('Ceptral Coefficients');
     title(strcat('Speaker: ', int2str(speaker_id)) );
 end
