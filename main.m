@@ -20,7 +20,7 @@ M = round(N*2/3);
 [MFCC_1, timeVec_1] = mfcc(s1, fs, N, p, M);
 
 % normalize ceptral coefficents 
-MFCC_1 = MFCC_1 ./ max(max(abs(MFCC_1))
+MFCC_1 = MFCC_1 ./ max(max(abs(MFCC_1)));
 
 % plot ceptral coefficents 
 plot_ceptrum(timeVec_1, MFCC_1, p, 1)
