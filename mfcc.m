@@ -41,4 +41,78 @@ function [MFCCcoef, timeVec] = mfcc(s, fs, N, p, M)
     
 % any plotting neeed
 
+%%%%%%%%%%% Extra %%%%%%%%%%%%%
+% function [STFT,time, freq] = stft(x,window,frameLength,frameHop,fs)
+% % manually calculate the STFT
+% 
+% % represent signal as column vector 
+% x = x(:);
+% 
+% % determine sinal length 
+% sigLength = length(x);
+% 
+% % calculate number of frames
+% numFrames = floor((sigLength-frameLength)/frameHop);
+% 
+% % calculate number of fft points
+% nfft = 2^nextpow2(frameLength);
+% 
+% % calculate positive half of fft points 
+% % due to symmetry, only 1/2 the points are unique  
+% halfFFT = ceil((1+nfft)/2);  
+% 
+% % create STFT matrix
+% STFT = zeros(halfFFT,numFrames);
+% 
+% 
+% % apply window to each frame then take fft
+% k = 1;
+% for i = 1:numFrames
+%     
+%         % windowing
+%         windowedSignal = window.*x(k:k+frameLength-1);
+%     
+%         % FFT
+%         xFFT = fft(windowedSignal,nfft);
+%         
+%         % update STFT matrix
+%         STFT(:,i) = xFFT(1:halfFFT);
+%    
+%         % update index
+%         k = k+frameHop;
+% end
+% 
+% % time vector
+% time = (frameLength/2:frameHop:frameLength/2+(numFrames-1)*frameHop)/fs;
+% 
+% % frequency vector
+% freq = (0:halfFFT-1)*fs/nfft;
+% 
+% end
+
+% function plotSTFT(time,freq,STFT)
+% surf(time, freq, STFT)
+% shading interp
+% axis tight
+% view(0, 90)
+% set(gca, 'FontName', 'Times New Roman', 'FontSize', 13)
+% xlabel('Time (s)')
+% ylabel('Frequency (Hz)')
+% title('Short-Time Fourier Transform')
+% 
+% hcol = colorbar;
+% set(hcol, 'FontName', 'Times New Roman', 'FontSize', 12)
+% ylabel(hcol, 'Magnitude (dB)')
+% 
+% view(-45,65)
+% colormap jet
+% end
+
+% function mel = frq2mel(freq)
+% mel = 2595*log(1+freq/500);
+% end
+
+% function freq = mel2frq(mel)
+% freq = 700*10^(mel/2595) - 1;
+% end
 end
