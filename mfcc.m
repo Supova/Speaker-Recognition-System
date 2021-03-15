@@ -10,6 +10,14 @@ function [MFCCcoef, timeVec] = mfcc(s, fs, N, p, M)
 %     MFCCcoef : MFCC coefficents 
 %     timeVec : time vector 
 
+% Steps to extract MFCC:
+% Frame the signal into short frames.
+% For each frame calculate the periodogram estimate of the power spectrum.
+% Apply the mel filterbank to the power spectra, sum the energy in each filter.
+% Take the logarithm of all filterbank energies.
+% Take the DCT of the log filterbank energies.
+% Keep first few DCT coefficients, discard the 0th one and the rest.
+
     % using MATLAB's stft function to frame, window, and take fft
     [s,freqVec,timeVec] = stft(s, fs, 'Window', hamming(N), 'OverlapLength', M)
     
