@@ -1,13 +1,13 @@
-function codebook = LBG(feature, M)
+function codebook = LBG(mfcc_coeff, num_centroids)
 
 epsilon = 0.01;
 
 % initializing single-vector codebook
-codebook = mean(feature,2);
+codebook = mean(mfcc_coeff,2);
 centroid = 1;
 D = 1;
 
-while centroid < M
+while centroid < num_centroids
     
     % doubling size of codebook
     temp = zeros([length(codebook), centroid*2]);
@@ -26,7 +26,7 @@ while centroid < M
     
 end 
 
-d = disteu(feature, codebook);
+d = disteu(mfcc_coeff, codebook);
 
 while abs(D) > epsilon
     
@@ -36,14 +36,14 @@ while abs(D) > epsilon
     
     % cluster vectors and find new centroid
     for i = 0:range(centroid)
-        codebook(:,i) = mean(feature(:, nearest_codebook == i), 2);
+        codebook(:,i) = mean(mfcc_coeff(:, nearest_codebook == i), 2);
     end 
       
     % updating centroid
     % replace all NaN values with 0
     codebook(isnan(codebook)) = 0;
     
-    d = disteu(feature, codebook);
+    d = disteu(mfcc_coeff, codebook);
     
     % computing distortion            
     D = (prev_distance - mean(d))/prev_distance;
