@@ -6,8 +6,10 @@
 *Note: code update in progress*
 
 **Usage:**
+
 Make sure all files are in same directory.
-run `main.m`
+
+open `main.m` and run
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
