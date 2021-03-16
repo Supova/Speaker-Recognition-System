@@ -54,13 +54,13 @@ and 512. In each case, set the frame increment M to be about N/3.
 
 <div class="row">
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" style="width:100%">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" ">
   </div>
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" style="width:100%">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" ">
   </div>
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" style="width:100%">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" ">
   </div>
 </div>
 
