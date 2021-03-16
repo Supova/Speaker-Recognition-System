@@ -37,7 +37,9 @@ frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 Now plot the signal to view it in the time domain. It should be obvious that the raw data are long and may need to be normalized
 because of different strengths.
 
-![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG)
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
+</p>
 *Figure _: Original Signal 1*
 
 
@@ -56,8 +58,8 @@ explain the impact of the melfb.m or melfbown.m program
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
 </p>
-![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG )
-*Figure _: mel-spaced filter bank response*
+Figure _: mel-spaced filter bank response
+
 
 
 
