@@ -26,13 +26,13 @@ Both members must be present and both should discuss their works and contributio
 The video needs to be submitted as a link on Github at the final deadline (11:59PM) March 20th. (Submit by text on the same final project assignment text entry on link to the Github video file).  
 
 
-TEST 1:
+**TEST 1:**
 
-TEST 2:
+**TEST 2:**
 In Matlab one can play the sound file using “sound”. Record the sampling rate and compute how
 many milliseconds of speech are contained in a block of 256 samples? 
-sampling rate = 12.5k Hz
-frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
+* sampling rate = 12.5k Hz
+* frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
 Now plot the signal to view it in the time domain. It should be obvious that the raw data are long and may need to be normalized
 because of different strengths.
@@ -40,22 +40,34 @@ because of different strengths.
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
 </p>
-*Figure _: Original Signal 1*
+Figure 1: Original Signal 1
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
 </p>
-*Figure _: Normalized and silence removed Signal 1*
+Figure 2: Normalized and silence removed Signal 1
 
 
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
 (msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
 and 512. In each case, set the frame increment M to be about N/3.
 
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" style="width:100%">
+  </div>
+</div>
+
 insert EXCEL table here
 
 
-TEST 3:
+**TEST 3:**
  Plot the mel-spaced filter bank responses. Compare them with theoretical responses. Compute
 and plot the spectrum of a speech file before and after the mel-frequency wrapping step. Describe and
 explain the impact of the melfb.m or melfbown.m program
@@ -69,14 +81,14 @@ explain the impact of the melfb.m or melfbown.m program
 
 
 
-TEST 4:
+**TEST 4:**
 
-TEST 5:
+**TEST 5:**
 
-TEST 6:
+**TEST 6:**
 
-TEST 7:
+**TEST 7:**
 
-TEST 8:
+**TEST 8:**
 
-TEST 9:
+**TEST 9:**
