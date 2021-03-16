@@ -3,7 +3,7 @@
 ### Team: Broketivated Engineers
 #### Members: Aakansha Bhatt, Sadia Mahtaban
 
-* Note: code update in progress *
+*Note: code update in progress*
 
 
 **TEST 1:**
