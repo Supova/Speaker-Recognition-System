@@ -48,6 +48,13 @@ create table
 
 TEST 3:
 
+
+https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG?raw=true
+
+
+
+
+
 TEST 4:
 
 TEST 5:
