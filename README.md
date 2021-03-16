@@ -48,7 +48,7 @@ create table
 
 TEST 3:
 
-![GitHub Logo](/Images/20 mel filter banks.PNG)
+![GitHub Logo](Images/20 mel filter banks.PNG)
 
 
 
