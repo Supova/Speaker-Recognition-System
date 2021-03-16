@@ -28,6 +28,7 @@ Figure 1: Original Signal 1
 Figure 2: Normalized and silence removed Signal 1
 
 
+
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
 (msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
 and 512. In each case, set the frame increment M to be about N/3.
@@ -60,7 +61,7 @@ explain the impact of the melfb.m or melfbown.m program
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
 </p>
-*Figure 6:  mel-spaced filter bank response 1*
+Figure 6:  mel-spaced filter bank response 1
 
 
 
