@@ -39,9 +39,13 @@ because of different strengths.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
- <em>Figure _: Original Signal 1</em>
 </p>
+*Figure _: Original Signal 1*
 
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
+</p>
+*Figure _: Normalized and silence removed Signal 1*
 
 
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
@@ -58,11 +62,8 @@ explain the impact of the melfb.m or melfbown.m program
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
- 
 </p>
-
-%Figure _:  mel-spaced filter bank response 1
+*Figure _:  mel-spaced filter bank response 1*
 
 
 
