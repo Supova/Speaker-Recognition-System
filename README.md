@@ -1,5 +1,5 @@
 # EEC-201
-Digital Signal Processing
+## Digital Signal Processing
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
@@ -63,6 +63,15 @@ explain the impact of the melfb.m or melfbown.m program
 </p>
 Figure 6:  mel-spaced filter bank response 1
 
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
+</p>
+Figure 7:  Before Mel filter bank
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
+</p>
+Figure 8:  After Mel-frquency wrapping
 
 
 
