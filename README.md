@@ -82,7 +82,7 @@ Figure 7:  Before Mel filter bank
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
 </p>
-Figure 8:  After Mel-frquency wrapping
+Figure 8:  After Mel-frquency wrapping [not log scale]
 
 
 
