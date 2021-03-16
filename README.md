@@ -96,6 +96,9 @@ To check whether the program is working, inspect the acoustic space (MFCC vector
 dimensions in a 2D plane to observe the results from different speakers. Are they in clusters?
 
 
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
+</p>
 
 
 **TEST 6:**
