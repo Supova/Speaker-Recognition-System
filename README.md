@@ -38,6 +38,7 @@ Now plot the signal to view it in the time domain. It should be obvious that the
 because of different strengths.
 
 ![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG)
+*Figure _: Original Signal 1*
 
 
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
@@ -52,8 +53,11 @@ TEST 3:
 and plot the spectrum of a speech file before and after the mel-frequency wrapping step. Describe and
 explain the impact of the melfb.m or melfbown.m program
 
-![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG "caption")
-
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
+</p>
+![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG )
+*Figure _: mel-spaced filter bank response*
 
 
 
