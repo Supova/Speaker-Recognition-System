@@ -3,6 +3,9 @@
 ### Team: Broketivated Engineers
 #### Members: Aakansha Bhatt, Sadia Mahtaban
 
+* Note: code update in progress *
+
+
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
 the database? Next play each sound in the TEST folder in a random order without looking at the
