@@ -16,7 +16,8 @@ Play each sound file in the TRAIN folder. Can you distinguish the voices of the 
 the database? Next play each sound in the TEST folder in a random order without looking at the
 groundtruth and try to identify the speaker manually. Record what is your (human performance)
 recognition rate. Use this result as a later benchmark.
-* 11/11
+* 7/11
+* 5/11
 
 **TEST 2:**
 In Matlab one can play the sound file using “sound”. Record the sampling rate and compute how
