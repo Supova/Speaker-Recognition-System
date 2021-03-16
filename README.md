@@ -52,15 +52,20 @@ Use STFT to generate periodogram. Locate the region in the plot that contains mo
 (msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
 and 512. In each case, set the frame increment M to be about N/3.
 
+STFT of Signal 1:
+
 <div class="row">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" ">
+     Figure 3: N = 128                                                                                             
   </div>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" ">
+    Figure 4: N = 256    
   </div>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" ">
+    Figure 5: N = 512   
   </div>
 </div>
 
@@ -75,7 +80,7 @@ explain the impact of the melfb.m or melfbown.m program
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
 </p>
-*Figure _:  mel-spaced filter bank response 1*
+*Figure 6:  mel-spaced filter bank response 1*
 
 
 
