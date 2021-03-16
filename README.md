@@ -20,7 +20,7 @@ because of different strengths.
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
 </p>
-Figure 1: Original Signal 1
+*Figure 1: Original Signal 1*
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
