@@ -59,10 +59,10 @@ explain the impact of the melfb.m or melfbown.m program
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
  <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
- Figure _:  mel-spaced filter bank response 1
+ 
 </p>
 
-
+%Figure _:  mel-spaced filter bank response 1
 
 
 
