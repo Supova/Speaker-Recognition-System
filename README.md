@@ -73,8 +73,15 @@ Figure 7:  Before Mel filter bank
 </p>
 Figure 8:  After Mel-frquency wrapping
 
+* change color mapping
 
-
+###MFCC Steps:
+* Frame the signal into short overlapping frames
+* Windowing: Hamming
+* Discrete Fourier Transform
+* Apply Filter Banks for Mel-frequency wrapping
+* Get the log filterbank energies
+* Discrete cosine transform
 
 **TEST 4:**
 
