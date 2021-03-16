@@ -48,7 +48,7 @@ create table
 
 TEST 3:
 
-![GitHub Logo](Images/20 mel filter banks.PNG)
+![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG)
 
 
 
