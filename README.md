@@ -67,7 +67,6 @@ Figure 6:  mel-spaced filter bank response 1
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
- Figure 7:  Before Mel filter bank
 </p>
 Figure 7:  Before Mel filter bank
 
@@ -76,8 +75,9 @@ Figure 7:  Before Mel filter bank
 </p>
 Figure 8:  After Mel-frquency wrapping
 
-* change color mapping
 
+
+**TEST 4:**
 **MFCC Steps:**
 * Frame the signal into short overlapping frames
 * Windowing: Hamming
@@ -90,9 +90,13 @@ Figure 8:  After Mel-frquency wrapping
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MFCC.PNG">
 </p>
 
-**TEST 4:**
 
 **TEST 5:**
+To check whether the program is working, inspect the acoustic space (MFCC vectors) in any two
+dimensions in a 2D plane to observe the results from different speakers. Are they in clusters?
+
+
+
 
 **TEST 6:**
 
