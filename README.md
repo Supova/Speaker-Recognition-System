@@ -36,19 +36,23 @@ frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
 Now plot the signal to view it in the time domain. It should be obvious that the raw data are long and may need to be normalized
 because of different strengths.
-( insert plot here or reference above to report)
+
+![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG)
 
 
 Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
 (msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
 and 512. In each case, set the frame increment M to be about N/3.
 
-create table
+insert EXCEL table here
 
 
 TEST 3:
+ Plot the mel-spaced filter bank responses. Compare them with theoretical responses. Compute
+and plot the spectrum of a speech file before and after the mel-frequency wrapping step. Describe and
+explain the impact of the melfb.m or melfbown.m program
 
-![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG)
+![GitHub Logo](https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG "caption")
 
 
 
