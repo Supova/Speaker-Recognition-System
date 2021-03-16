@@ -5,7 +5,7 @@
 
 *Note: code update in progress*
 
-* Usage: *
+**Usage:**
 Make sure all files are in same directory.
 run `main.m`
 
