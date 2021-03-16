@@ -75,7 +75,7 @@ Figure 8:  After Mel-frquency wrapping
 
 * change color mapping
 
-###MFCC Steps:
+**MFCC Steps:**
 * Frame the signal into short overlapping frames
 * Windowing: Hamming
 * Discrete Fourier Transform
