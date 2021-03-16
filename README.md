@@ -37,7 +37,7 @@ STFT of Signal 1:
 
 <div class="row">
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" ">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" width=50% height=50%">
      Figure 3: N = 128                                                                                             
   </div>
   <div class="column">
