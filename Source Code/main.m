@@ -15,7 +15,7 @@ M=100;
 [s1,fs] = audioread('s1.wav');
 s1 = s1(:,1);
 
-s1 = pre_procressing(s1, 1)
+s1 = preProcressing(s1, 1)
 
 % calculate MFCC coefficients
 [MFCC_1, timeVec_1] = mfcc(s1, fs, N, p, M);
