@@ -1,10 +1,10 @@
-function sig = pre_procressing(signal, maxAmp)
+function sig = preProcressing(signal, maxAmp)
 
 % normalize  
- scaled_Sig = ampNormalize(signal, maxAmp)
+ scaled_Sig = ampNormalize(signal, maxAmp);
   
  % silence removal
- sig = silence_remove(scaled_Sig)
+ sig = silence_remove(scaled_Sig);
   
 function scaled_Sig = ampNormalize(signal, maxAmp)
 %     Normalize or scale the amplitude to a value specified
@@ -31,7 +31,7 @@ end
 function sig = silence_remove(signal)
 % remove silence by taking portions above 0.03
           
-crit = abs(signa;) > 0.03;
+crit = abs(signal) > 0.03;
 sig = signal(find(crit, 1, 'first'):find(crit, 1, 'last'));
 end
   
