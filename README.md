@@ -49,15 +49,15 @@ STFT of Signal 1:
 
 <div class="row">
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" ">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
      <br><i> Figure 3: N = 128 </i>                                                                                             
   </div>
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" ">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
     <br><i>Figure 4: N = 256</i>    
   </div>
   <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" ">
+    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
     <br><i> Figure 5: N = 512</i>   
   </div>
 </div>
