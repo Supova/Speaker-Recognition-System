@@ -84,7 +84,7 @@ explain the impact of the melfb.m or melfbown.m program
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
-  <br><i>Figure 8:  After Mel-frquency wrapping [not log scale]</i>
+  <br><i>Figure 8:  After Mel-frquency wrapping</i>
 </p>
 
 
