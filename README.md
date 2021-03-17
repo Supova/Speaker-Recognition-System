@@ -33,19 +33,11 @@ because of different strengths.
 </p>
 
 
-
-
-Figure 1: Original Signal 1
-
-
-
-
-
-
 <p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
+  <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
+  <br><i>Figure 2: Normalized and silence removed Signal 1</i>
 </p>
-Figure 2: Normalized and silence removed Signal 1
+
 
 
 
@@ -58,15 +50,15 @@ STFT of Signal 1:
 <div class="row">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_128.PNG" alt="N = 128" ">
-     Figure 3: N = 128                                                                                             
+     <br><i> Figure 3: N = 128 </i>                                                                                             
   </div>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_256.PNG" alt="N = 256" ">
-    Figure 4: N = 256    
+    <br><i>Figure 4: N = 256</i>    
   </div>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20N_512.PNG" alt="N = 512" ">
-    Figure 5: N = 512   
+    <br><i> Figure 5: N = 512</i>   
   </div>
 </div>
 
@@ -80,18 +72,21 @@ explain the impact of the melfb.m or melfbown.m program
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
+  <br><i>Figure 6:  mel-spaced filter bank response 1</i>
 </p>
-Figure 6:  mel-spaced filter bank response 1
+
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
+  <br><i>Figure 7:  Before Mel filter bank</i>
 </p>
-Figure 7:  Before Mel filter bank
+
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
+  <br><i>Figure 8:  After Mel-frquency wrapping [not log scale]</i>
 </p>
-Figure 8:  After Mel-frquency wrapping [not log scale]
+
 
 
 
