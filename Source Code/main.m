@@ -15,13 +15,15 @@ M=100;
 [s1,fs] = audioread('s1.wav');
 s1 = s1(:,1);
 
-s1 = preProcressing(s1, 1)
+s1 = preProcressing(s1, 1);
+ 
+%plot_timeDomain(s1,1)
 
 % calculate MFCC coefficients
 [MFCC_1, timeVec_1] = mfcc(s1, fs, N, p, M);
 
 % normalize ceptral coefficents 
-MFCC_1 = MFCC_1 ./ max(max(abs(MFCC_1)))
+MFCC_1 = MFCC_1 ./ max(max(abs(MFCC_1)));
 
 % plot ceptral coefficents 
  plot_ceptrum(timeVec_1, MFCC_1, p, 1)
@@ -40,6 +42,15 @@ grid on
 % codebook = LBG(mfcc_coeff, num_centroids)
 
 
+
+
+% plot time domain
+function plot_timeDomain(signal,speaker_id)
+plot(signal)
+xlabel('Time (s)');
+ylabel('Amplitude');
+title(strcat('Speaker: ', int2str(speaker_id)) );
+end
 
 
 
