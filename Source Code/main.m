@@ -12,22 +12,22 @@ p = 20;
 %M = round(N*2/3);
 M=100;
 
-[s1,fs] = audioread('s1.wav');
-s1 = s1(:,1);
+[sig,fs] = audioread('s1.wav');
+sig = sig(:,1);
 
-s1 = preProcressing(s1, 1);
+sig = preProcressing(sig, 1);
  
 %plot_timeDomain(s1,1)
 
 % calculate MFCC coefficients
-[MFCC_1, timeVec_1] = mfcc(s1, fs, N, p, M);
+[MFCC, timeVec] = mfcc(sig, fs, N, p, M);
 
 % plot ceptral coefficents 
- plot_ceptrum(timeVec_1, MFCC_1, p, 1)
+ plot_ceptrum(timeVec, MFCC, p, 1)
 
 % plotting mfcc clusters
 figure(2)
-plot(MFCC_1(1,:)', MFCC_1(3,:)', 'o')
+plot(MFCC(1,:)', MFCC(3,:)', 'o')
 xlim([-2,2]); ylim([-2,2]);
 hold on
 xlabel('mfcc_1'); ylabel('mfcc_3')
