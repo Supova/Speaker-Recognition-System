@@ -19,7 +19,7 @@ function [MFCCcoef, timeVec] = mfcc(s, fs, N, p, M)
 % Keep first few DCT coefficients, discard the 0th one and the rest.
 
     % using MATLAB's stft function to frame, window, and take fft
-    [s,freqVec,timeVec] = stft(s, fs, 'Window', hamming(N), 'OverlapLength', M)
+    [s,freqVec,timeVec] = stft(s, fs, 'Window', hamming(N), 'OverlapLength', M);
     
     % taking the positive half of the stft due to symmetry
     s = s((N/2):end, :);
@@ -40,6 +40,10 @@ function [MFCCcoef, timeVec] = mfcc(s, fs, N, p, M)
     
     % discrete cosine transform
     MFCCcoef = dct(log_mel_output);
+    
+    % normalize ceptral coefficents 
+    MFCCcoef = MFCCcoef ./ max(max(abs(MFCCcoef)));
+
     
     % exclude 0'th order cepstral coefficient as it's the mean value 
     % (doesn't provide much info)
