@@ -1,7 +1,6 @@
 # EEC-201
 ## Digital Signal Processing
 ### Team: Broketivated Engineers
-#### Members: Aakansha Bhatt, Sadia Mahtaban
 
 *Note: code update in progress*
 
