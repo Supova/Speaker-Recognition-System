@@ -1,10 +1,12 @@
 function sig = preProcressing(signal, maxAmp)
 
+% silence removal
+ sig_wo_silence = silence_remove(sig);
+ 
 % normalize  
- scaled_Sig = ampNormalize(signal, maxAmp);
-  
- % silence removal
- sig = silence_remove(scaled_Sig);
+ scaled_Sig = ampNormalize(sig_wo_silence, maxAmp);
+ 
+ sig = scaled_Sig;
   
 function scaled_Sig = ampNormalize(signal, maxAmp)
 %     Normalize or scale the amplitude to a value specified
