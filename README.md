@@ -73,6 +73,21 @@ The mel-spaced filter bank response is plotted in the image below:
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
   <br><i>Figure 6:  Mel filter bank response 1</i>
 </p>
+<br> </br>
+
+We also computed the spectrum of the speech signal before and after the mel-frequency wrapping step is carried out and our observations are shown below: 
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
+  <br><i>Figure 7:  Before Mel filter bank</i>
+</p>
+<br> </br>
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
+  <br><i>Figure 8:  After Mel-frquency wrapping</i>
+</p>
+<br> </br>
 
 
 <h3> Feature Matching </h3>
