@@ -16,16 +16,18 @@ Speaker Recognition is the process through which a system can 'recognize' who is
 
 In this project, we will be implementing the text dependent speaker recognition strategy by the process of feature matching techniques in which the time axes of an input speech sample and reference templates or reference models of the registered speaker are aligned and the similarities between them are then accumulated from the beginning to the end of the utterance.
 
-# Procedural Method of Speaker Recognition 
+# Procedure for Speaker Recognition 
 
-<h2> Feature Extraction </h2>
+
+
+<h5> Feature Extraction </h5>
 In this method
 
-<h2> Feature Matching </h2>
+<h5> Feature Matching </h5>
 
-<h2> Maximum Selection </h2>
+<h5> Maximum Selection </h5>
 
-<h2> Identification Result </h2>
+<h5> Identification Result </h5>
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
