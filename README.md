@@ -1,7 +1,7 @@
 # EEC-201
 ## Digital Signal Processing
 ### Team: Broketivated Engineers
-
+##### Sadia & Aakansha
 
 # Speaker Recognition
 
