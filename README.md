@@ -64,6 +64,16 @@ STFT of Signal 1:
   <br> </br>
 </div>
 
+After performing the FFT, the next step is to carry out mel-frequency wrapping. In this process, we simulate a subjective spectrum by creating a filter bank which is spaced uniformly on the mel-scale. The mel-frequency scale is a linear frequency spacing below 1000 Hz and a logarithmic spacing above 1000 Hz. We create this spectrum because speech signals do not follow a linear scale, and hence for each tone with an actual frequency, f, a subjective pitch is to be measured and determined. 
+<br> </br>
+
+The mel-spaced filter bank response is plotted in the image below:
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
+  <br><i>Figure 6:  Mel filter bank response 1</i>
+</p>
+
 
 <h3> Feature Matching </h3>
 
