@@ -23,7 +23,7 @@ In this project, we will be implementing the text dependent speaker recognition 
 <h5> Feature Extraction </h5>
 In this method
 
-<h5> Feature Matching </h5>
+<h3> Feature Matching </h3>
 
 <h5> Maximum Selection </h5>
 
