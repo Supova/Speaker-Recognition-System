@@ -22,8 +22,21 @@ In this project, we will be implementing the text dependent speaker recognition 
 
 # Procedure for Speaker Recognition 
 
-
 <h3> Pre-processing </h3>
+When dealing with sound signals, we often have to find ways to reduce noise or remove portions of the sound signal where there is nothing but silence. We use methods of pre-processing of the sound signals to carry forward these operations. 
+
+The following plot shows our raw signal without any pre-processing conducted on it:
+<p align="center"> 
+  <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
+  <br><i> Figure 1: Original (Raw) Signal 1 </i>
+</p>
+
+After pre-processing the signal, we get the following signal:
+<p align="center"> 
+  <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
+  <br><i>Figure 2: Normalized and silence removed Signal 1</i>
+</p>
+
 
 <h3> Feature Extraction </h3>
 In this method
