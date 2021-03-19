@@ -1,14 +1,7 @@
 # EEC-201
 ## Digital Signal Processing
 ### Team: Broketivated Engineers
-
-*Note: code update in progress*
-
-**Usage:**
-
-Make sure all files are in same directory.
-
-Open `main.m` and run
+### Team Members: Aakansha Bhatt | Sadia Mahtaban
 
 # Speaker Recognition
 
