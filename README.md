@@ -61,6 +61,7 @@ STFT of Signal 1:
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
     <br><i> Figure 5: N (frame size) = 512 </i>   
   </div>
+  <br> </br>
 </div>
 
 
