@@ -19,15 +19,13 @@ In this project, we will be implementing the text dependent speaker recognition 
 # Procedure for Speaker Recognition 
 
 
+<h3> Pre-processing </h3>
 
 <h3> Feature Extraction </h3>
 In this method
 
 <h3> Feature Matching </h3>
 
-<h3> Maximum Selection </h3>
-
-<h3> Identification Result </h3>
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
