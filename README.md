@@ -14,7 +14,18 @@ Open `main.m` and run
 
 Speaker Recognition is the process through which a system can 'recognize' who is speaking by using speaker-specific information that is included in speech signals. It is generally used to verify identities. There are two methods through which speaker recognition is carried out - text dependent and text independent. The text dependent speaker recognition strategy requires the speaker to provide utterances of key words or sentences, i.e. the same text is used for both training and testing. The text independent speaker recognition strategy does not rely on specific text being spoken. 
 
-In this project, we will be implementing the text dependent speaker recognition strategy by the process of template/model-sequence-matching techniques in which the time axes of an input speech sample and reference templates or reference models of the registered speaker are aligned and the similarities between them are then accumulated from the beginning to the end of the utterance.
+In this project, we will be implementing the text dependent speaker recognition strategy by the process of feature matching techniques in which the time axes of an input speech sample and reference templates or reference models of the registered speaker are aligned and the similarities between them are then accumulated from the beginning to the end of the utterance.
+
+# Procedural Method of Speaker Recognition 
+
+<h2> Feature Extraction </h2>
+In this method
+
+<h2> Feature Matching </h2>
+
+<h2> Maximum Selection </h2>
+
+<h2> Identification Result </h2>
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
