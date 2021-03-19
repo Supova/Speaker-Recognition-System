@@ -81,7 +81,6 @@ We also computed the spectrum of the speech signal before and after the mel-freq
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
   <br><i>Figure 7:  Before Mel filter bank</i>
 </p>
-<br> </br>
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
