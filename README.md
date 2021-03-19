@@ -93,6 +93,9 @@ In the image below, we inspect the acoustic space (MFCC vectors) of two differen
 </p>
 
 <h3> Feature Matching </h3>
+The next step in the speaker recognition process is using applying vector quantization (VQ) and the Linde-Buze-Gray (LBG) algorithm. VQ is a quantization process of data in contiguous blocks known as vectors. Quantization maps these infinite vectors into finite representative vectors. There are several techniques for quantization and the efficiency of these steps is reliant upon the generated codebooks by the training set of speech signals. Our method uses LBG algorithm to iteratively form the codebooks. First, a finite number of regions known as clusters are generated from the MFCCs. Then we partition these clusters into non-overlapping regions where every vector is represented by a corresponding centroid vector known as the code word. The code words are then grouped together to form a codebook.
+
+![image](https://user-images.githubusercontent.com/73858403/111838937-46041f00-88b7-11eb-9570-c62c3a415cca.png)
 
 
 **TEST 1:**
