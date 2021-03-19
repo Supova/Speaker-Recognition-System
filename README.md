@@ -79,15 +79,16 @@ We also computed the spectrum of the speech signal before and after the mel-freq
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
-  <br><i>Figure 7:  Before Mel filter bank</i>
+  <br><i>Figure 7:  Before mel filter bank</i>
 </p>
-
+<br> </br>
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
-  <br><i>Figure 8:  After Mel-frquency wrapping</i>
+  <br><i>Figure 8:  After mel-frquency wrapping</i>
 </p>
 <br> </br>
 
+As can be seen from the above images, the mel filter bank smooth out the original spectogram. 
 
 <h3> Feature Matching </h3>
 
