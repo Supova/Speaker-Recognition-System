@@ -92,6 +92,12 @@ As can be seen from the above images, the mel filter bank smooths out the origin
 
 After carrying out the wrapping, we then wish to convert our speech signal back into the time domain, hence creating coefficients in time called the mel frequency cepstrum coefficients (MFCCs). We use the discrete cosine transform (DCT) to do the same and extract 14 coefficients for each time instance. Over here, we exclude the first component from the DCT since it represents the mean value of the input signal, which contains little speaker specific information, hence only extracting coefficients 2-14 (13 coefficients in total). Hence, each voice utterance has been transformed into a sequence of acoustic vectors. 
 
+In the image below, we inspect the acoustic space (MFCC vectors) in a 2D plane to observe the different features of each speaker.
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
+</p>
+
 <h3> Feature Matching </h3>
 
 
