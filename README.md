@@ -52,13 +52,11 @@ STFT of Signal 1:
      <br><i> Figure 3: N (frame size) = 128 </i>
   </div>
   <br> </br>
-                                                                                                   
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
     <br><i>Figure 4: N (frame size) = 256 </i>    
   </div>
-  <br> </br>                                                                                                 
-                                                                                                   
+  <br> </br>                                                                                          
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
     <br><i> Figure 5: N (frame size) = 512 </i>   
