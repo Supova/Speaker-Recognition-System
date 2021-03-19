@@ -23,7 +23,7 @@ In this project, we will be implementing the text dependent speaker recognition 
 # Procedure for Speaker Recognition 
 
 <h3> Pre-processing </h3>
-When dealing with sound signals, we often have to find ways to reduce noise or remove portions of the sound signal where there is nothing but silence. We use methods of pre-processing of the sound signals to carry forward these operations. 
+When dealing with speech signals, we often have to find ways to reduce noise or remove portions of the signal where there is nothing but silence. We use methods of pre-processing of the speech signals to carry forward these operations. 
 <br>
 </br>
 The following plot shows our raw signal without any pre-processing conducted on it:
@@ -35,12 +35,14 @@ The following plot shows our raw signal without any pre-processing conducted on 
 After pre-processing the signal, we get the following signal:
 <p align="center"> 
   <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
-  <br><i>Figure 2: Normalized and silence removed Signal 1</i>
+  <br><i>Figure 2: Normalized and Silence Removed Signal 1</i>
 </p>
 
-
 <h3> Feature Extraction </h3>
-In this method
+Speech signals is a slowly timed varying signals and when we observe their characteristics over a long period of time, we find that they contain variations that can help distinguish between the different sounds being spoken. Therefore, a short-time spectral analysis is the most common way to characterize any speech signal. One way of representing the speech signal is by using the phenomenon called Mel Frequency Cepstrum (MFC). It is a representation of the short-term power spectrum of a speech signal, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. Mel-frequency cepstral coefficients (MFCCs) are coefficients that collectively make up an MFC.
+
+<h4> How to compute the MFCC: </h4>
+
 
 <h3> Feature Matching </h3>
 
