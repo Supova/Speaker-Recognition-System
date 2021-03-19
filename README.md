@@ -96,6 +96,7 @@ In the image below, we inspect the acoustic space (MFCC vectors) of two differen
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
+<br><i> Figure 9: MFCC space for speaker 1 and speaker 2 </i>
 </p>
 
 <h3> Feature Matching </h3>
