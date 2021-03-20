@@ -110,7 +110,7 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our matching results in the image below to show that our speaker recognition can recognize and verify whether two speech signals are matching. 
 
 <p align="center"> 
-<img src="">
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
 <br><i> Figure 11: Matching </i>
 </p>
 
