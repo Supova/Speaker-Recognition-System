@@ -39,7 +39,7 @@ To compute the MFCCs, we first perform a short-time fourier transform (STFT) on 
 <br> </br>
 STFT of Signal 1:
 
-<div class="row">
+<div class="row" align="center">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
      <br><i> Figure 3: N (frame size) = 128 </i>
