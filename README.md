@@ -101,7 +101,7 @@ The recursive  process of the LBG algorithm used is as follows. First a single-v
 Below is our image of our acoustic vectors after implementing the vector quantization.
 
 <p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/VQ acoustic vector codeblocks.PNG.PNG">
+<img src=https://github.com/Supova/EEC-201/blob/main/Images/VQ%20acoustic%20vector%20codeblocks.PNG">
 <br><i> Figure 10: MFCC space with centroids after VQ </i>
 </p>
 
@@ -122,101 +122,3 @@ many milliseconds of speech are contained in a block of 256 samples?
 * sampling rate = 12.5k Hz
 * frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
-Now plot the signal to view it in the time domain. It should be obvious that the raw data are long and may need to be normalized
-because of different strengths.
-
-<p align="center"> 
-  <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
-  <br><i> Figure 1: Original Signal 1 </i>
-</p>
-
-
-<p align="center"> 
-  <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
-  <br><i>Figure 2: Normalized and silence removed Signal 1</i>
-</p>
-
-
-
-
-Use STFT to generate periodogram. Locate the region in the plot that contains most of the energy, in time
-(msec) and frequency (in Hz) of the input speech signal. Try different frame size: for example N = 128, 256
-and 512. In each case, set the frame increment M to be about N/3.
-
-STFT of Signal 1:
-
-<div class="row">
-  <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
-     <br><i> Figure 3: N = 128 </i>                                                                                             
-  </div>
-  <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
-    <br><i>Figure 4: N = 256</i>    
-  </div>
-  <div class="column">
-    <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
-    <br><i> Figure 5: N = 512</i>   
-  </div>
-</div>
-
-insert EXCEL table here
-
-
-**TEST 3:**
- Plot the mel-spaced filter bank responses. Compare them with theoretical responses. Compute
-and plot the spectrum of a speech file before and after the mel-frequency wrapping step. Describe and
-explain the impact of the melfb.m or melfbown.m program
-
-<p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
-  <br><i>Figure 6:  mel-spaced filter bank response 1</i>
-</p>
-
-
-<p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
-  <br><i>Figure 7:  Before Mel filter bank</i>
-</p>
-
-
-<p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
-  <br><i>Figure 8:  After Mel-frquency wrapping</i>
-</p>
-
-
-
-
-
-**TEST 4:**
-**MFCC Steps:**
-* Frame the signal into short overlapping frames
-* Windowing: Hamming
-* Discrete Fourier Transform
-* Apply Filter Banks for Mel-frequency wrapping
-* Get the log filterbank energies
-* Discrete cosine transform
-
-<p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MFCC.PNG">
-</p>
-
-
-**TEST 5:**
-To check whether the program is working, inspect the acoustic space (MFCC vectors) in any two
-dimensions in a 2D plane to observe the results from different speakers. Are they in clusters?
-
-
-<p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
-</p>
-
-
-**TEST 6:**
-
-**TEST 7:**
-
-**TEST 8:**
-
-**TEST 9:**
