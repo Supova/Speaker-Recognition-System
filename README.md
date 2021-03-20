@@ -1,4 +1,5 @@
 # EEC-201 [Digital Signal Processing]
+<a name="jump_to_top"></a>
 ## Speaker Recognition
 ### Team: Broketivated Engineers
 *This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG and noise addition. Training, testing, and analysis writing was done simultaneously.*
@@ -127,5 +128,5 @@ many milliseconds of speech are contained in a block of 256 samples?
 * sampling rate = 12.5k Hz
 * frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
-[Go to top](#-speaker-recognition)
+[Go to top](#jump_to_top)
        
