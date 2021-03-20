@@ -1,14 +1,17 @@
-# EEC-201 [Digital Signal Processing]
+# EEC-201 [Speaker Recognition]
 <a name="jump_to_top"></a>
-## Speaker Recognition
 <p align="center"><i>♪ All around me were familiar faces..but now they are familiar voices...♫</i></p>
 <img src=https://www.civitaslearning.com/wp-content/uploads/2017/10/cls_signal.jpg width="1000" height="200">
 
 ### Team: Broketivated Engineers
 *This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG and noise addition. Training, testing, and analysis writing was done simultaneously.*
 
+## Abstract 
+In the current world situation with a pandemic and quarantine, our voices have become ever more important, literally. There is deceased identity verification through face to face or through finger prints due to communication being restricted to mostly virtual. However, just as our faces and finger prints are unique, our voices also have distinct and differentiable characteristics. Computer programs are able to identify these features better than the human ear as demonstrated in our project. We implement a speaker recognition system using pattern recognition, or feature matching, where sequences of acoustic vectors that are extracted from input speech signals are classified into individual speaker IDs. Specifically, our system is an implementation of supervised pattern recognition where the database consists of known patterns in the training set which are compared to a test set to evaluate our classification algorithm. The recognition rate of our algorithm is ___%.
+
+
 ## Introduction
-Speaker Recognition is the process through which a system can 'recognize' who is speaking by using speaker-specific information that is included in speech signals. It is generally used to verify identities. There are two methods through which speaker recognition is carried out - text dependent and text independent. The text dependent speaker recognition strategy requires the speaker to provide utterances of key words or sentences, i.e. the same text is used for both training and testing. The text independent speaker recognition strategy does not rely on specific text being spoken. 
+There are two methods through which speaker recognition is carried out - text dependent and text independent. The text dependent speaker recognition strategy requires the speaker to provide utterances of key words or sentences, i.e. the same text is used for both training and testing. The text independent speaker recognition strategy does not rely on specific text being spoken. 
 
 Speaker Recognition has two phases: Enrollment and Recognition. 
 - Enrollment: During enrollment, the speaker's voice is recorded and a number of the voice features are extracted to create a voice print that uniquely identifies the speaker. The voice print in our project is the training data that we have been provided. 
@@ -111,6 +114,8 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 <h3> Testing </h3>
 
 The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our matching results in the image below to show that our speaker recognition can recognize and verify whether two speech signals are matching. 
+
+**compare with human rate here**
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
