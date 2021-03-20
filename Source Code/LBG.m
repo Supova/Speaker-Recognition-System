@@ -18,8 +18,8 @@ for i = 1:log2(num_centroids)
         
         for j = 1:2^i
             
-            codebook(:,j) = mean(mfcc_coeff(:, index == j), 2);
-            d = disteu(d(:, index == j), codebook(:,j));
+            codebook(:,j) = mean(mfcc_coeff(:, find(index == j)), 2);
+            d = disteu(d(:, find(index == j)), codebook(:,j));
             
             for k = 1:length(d)
                 temp = temp + d(k);
