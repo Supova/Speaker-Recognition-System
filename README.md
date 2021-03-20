@@ -100,7 +100,10 @@ The recursive  process of the LBG algorithm used is as follows. First a single-v
 
 Below is our image of our acoustic vectors after implementing the vector quantization.
 
-
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
+<br><i> Figure 10: MFCC space with centroids after VQ </i>
+</p>
 
 
 
