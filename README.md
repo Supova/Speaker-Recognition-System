@@ -88,7 +88,7 @@ After carrying out the wrapping, we then wish to convert our speech signal back 
 In the image below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals.
 
 <p align="center"> 
-<img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20sig2%20MFCC%20clusters.PNG">
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/mfcc5_6%20speaker1_2.PNG">
 <br><i> Figure 9: MFCC space for speaker 1 and speaker 2 </i>
 </p>
 
