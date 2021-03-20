@@ -105,7 +105,7 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 <br><i> Figure 10: MFCC space with centroids after VQ </i>
 </p>
 
-
+<h3> Testing </h3>
 
 
 **TEST 1:**
