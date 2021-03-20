@@ -1,6 +1,8 @@
 # EEC-201 [Digital Signal Processing]
 <a name="jump_to_top"></a>
 ## Speaker Recognition
+<img src=https://www.civitaslearning.com/wp-content/uploads/2017/10/cls_signal.jpg width="1000" height="200">
+
 ### Team: Broketivated Engineers
 *This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG and noise addition. Training, testing, and analysis writing was done simultaneously.*
 
