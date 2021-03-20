@@ -127,5 +127,5 @@ many milliseconds of speech are contained in a block of 256 samples?
 * sampling rate = 12.5k Hz
 * frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
-[Go to top](#speaker-recognition])
+[Go to top](#-speaker-recognition])
        
