@@ -17,9 +17,9 @@ Speaker Recognition has two phases: Enrollment and Recognition.
 - Enrollment: During enrollment, the speaker's voice is recorded and a number of the voice features are extracted to create a voice print that uniquely identifies the speaker. The voice print in our project is the training data that we have been provided. 
 - Recognition: During this process, the provided speaker's audio sample is compared against the created voice print and the speaker's identity is verified. The audio sample in our project is the test data that we have been provided.
 
-In this project, we will be implementing the text dependent speaker recognition strategy by the process of feature matching techniques in which the time axes of an input speech sample and reference templates or reference models of the registered speaker are aligned and the similarities between them are then accumulated from the beginning to the end of the utterance.
+In this project, we will be implementing the text dependent speaker recognition strategy by the process of feature matching techniques described below. Our obejctive is to train a voice model for each of the 11 speakers in the *Training* folder and then match them to the speech files in the *Test* folder. We will vary the paramters and add noise to test the robustness of our system.
 
-## Procedure for Speaker Recognition 
+## Methodology 
 
 <h3> Pre-processing </h3>
 
@@ -136,5 +136,8 @@ many milliseconds of speech are contained in a block of 256 samples?
 * sampling rate = 12.5k Hz
 * frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
+
+###### Remarks:
+The computational time and space complexity of our code can be improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
 [Go to top](#jump_to_top)
        
