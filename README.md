@@ -96,7 +96,7 @@ In the image below, we inspect the acoustic space (MFCC vectors) of two differen
 
 The next step in the speaker recognition process is using applying vector quantization (VQ) and the Linde-Buze-Gray (LBG) algorithm. VQ is a quantization process of data in contiguous blocks known as vectors. Quantization maps these infinite vectors into finite representative vectors. There are several techniques for quantization and the efficiency of these steps is reliant upon the generated codebooks by the training set of speech signals. Our method uses LBG algorithm to iteratively form the codebooks. First, a finite number of regions known as clusters are generated from the MFCCs. Then we partition these clusters into non-overlapping regions where every vector is represented by a corresponding centroid vector known as the code word. The code words are then grouped together to form a codebook.
 
-The recursive  process of the LBG algorithm used is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
+The recursive process of the LBG algorithm used is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
 
 Below is our image of our acoustic vectors after implementing the vector quantization.
 
@@ -107,6 +107,12 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <h3> Testing </h3>
 
+The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our matching results in the image below to show that our speaker recognition can recognize and verify whether two speech signals are matching. 
+
+<p align="center"> 
+<img src="">
+<br><i> Figure 11: Matching </i>
+</p>
 
 **TEST 1:**
 Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
