@@ -25,7 +25,7 @@ In this project, we will be implementing the text dependent speaker recognition 
 
 In raw speech signals, noise is ubiquitous. The speech signal is generally contaminated by noise originating from various sources which alter the characteristics of the speech signals. It also degrades the speech quality and intelligibility. Speech signals also contain regions of silence which convey no necessary data. Therefore, noise reduction and silence removal is important to process the signals and save processing time and bandwidth of the system.
 
-Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. Silence removal was done through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. After the stop point is the silence and this portion is removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
+Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. After the stop point is the silence and this portion is removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
 
 
 <p align="center"> 
@@ -42,24 +42,26 @@ Pre-processing of our signals is done in the `preProcessing.m` where we remove s
 
 Speech signals are slowly-timed varying signals and when we observe their characteristics over a long period of time, we find that they contain variations that can help distinguish between the different sounds being spoken. Therefore, a short-time spectral analysis is the most common way to characterize any speech signal. One way of representing the speech signal is by using the phenomenon called Mel Frequency Cepstrum (MFC). It is a representation of the short-term power spectrum of a speech signal, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. Mel-frequency cepstral coefficients (MFCCs) are coefficients that collectively make up an MFC.
 
-To compute the MFCCs, we first perform a short-time fourier transform (STFT) on our speech signal. We then perform windowing to minimize any spectral distortion we may observe. The STFT is mainly used to distinguish the changes in frequencies of our speech signal through time to create uniqueness across speakers. The generated periodogram can be viewed in the images below. We can observe regions in the plots that contain most of the energy, in time (msec) and frequency (in Hz).
+To computer the MFCCs, we first need to frame the signals. Using a frame size in powers of 2 allows for faster processing time. Initial analysis was done using a frame size N = 256 samples. Then we apply a Hamming window to each of the frames. Windowing generates a periodic signal but also causes loss of information at the ends of the frames due to smoothening. To recover this loss, we use overlapping frames where the overlap size M = 100 samples. The discrete Fourier Transform (DFT) is then calculated on a frame by frame basis, the result of which is a periodogram. Up to this step is known as Short Time Fourier Transform (STFT). Fourier transform tells what frequencies are present in a signal, but STFT tells when these frequencies occur in the linear frequency scale.
+
+To better understand the output of STFT and its parameters, we vary the frame size and set the frame overlap to one-third of the frame size (about 33% overlap).
 <br> </br>
 STFT of Signal 1:
 
 <div class="row" align="center">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
-     <br><i> Figure 3: N (frame size) = 128 </i>
+     <br><i> Figure 3: N = 128, M = 42, Frames = 303 </i>
   </div>
   <br> </br>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
-    <br><i>Figure 4: N (frame size) = 256 </i>    
+    <br><i>Figure 4: N = 256, M = 86, Frames = 150 </i>    
   </div>
   <br> </br>                                                                                          
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
-    <br><i> Figure 5: N (frame size) = 512 </i>   
+    <br><i> Figure 5: N = 512,  M = 171, Frames = 73 </i>   
   </div>
   <br> </br>
 </div>
@@ -136,6 +138,8 @@ In Matlab one can play the sound file using “sound”. Record the sampling rat
 many milliseconds of speech are contained in a block of 256 samples? 
 * sampling rate = 12.5k Hz
 * frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
+
+## Acknowledgements:
 
 
 ###### Remarks:
