@@ -9,7 +9,8 @@ function [s_with_noise, noise] = add_noise(s, noisetype, snr)
     bounded_output = (noisetype ~= "brown");
 
     % Get Noise
-    noise = dsp.ColoredNoise(noisetype, num_samples, num_channels, 'BoundedOutput', bounded_output);
+    noise_function = dsp.ColoredNoise(noisetype, num_samples, num_channels, 'BoundedOutput', bounded_output);
+    noise = noise_function();
 
     % Scale to specified dB
     scale = db2mag(-1*snr-threshold) * max(abs(s));
