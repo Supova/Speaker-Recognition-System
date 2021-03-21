@@ -27,9 +27,9 @@ for i = 1:n
     [s, fs] = audioread(file);
     
     % adding noise
-    % s = add_noise(s, "white", 30); % adding 30 dB of white noise
-    % s = add_noise(s, "pink", 30); % adding 30 dB of pink noise
-    % s = add_noise(s, "brown", 30); % adding 30 dB of brown noise
+    % [s,noise] = add_noise(s, "white", 30); % adding 30 dB of white noise
+    % [s,noise] = add_noise(s, "pink", 30); % adding 30 dB of pink noise
+    % [s,noise] = add_noise(s, "brown", 30); % adding 30 dB of brown noise
     
     % notch filter computations
     % f0 = 60; % tone that needs to be removed
