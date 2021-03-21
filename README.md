@@ -23,15 +23,16 @@ In this project, we will be implementing the text dependent speaker recognition 
 
 <h3> Pre-processing </h3>
 
-When dealing with speech signals, we often have to find ways to reduce noise or remove portions of the signal where there is nothing but silence. We use methods of pre-processing of the speech signals to carry forward these operations. 
-<br> </br>
-The following plot shows our raw signal without any pre-processing conducted on it:
+In raw speech signals, noise is ubiquitous. The speech signal is generally contaminated by noise originating from various sources which alter the characteristics of the speech signals. It also degrades the speech quality and intelligibility. Speech signals also contain regions of silence which convey no necessary data. Therefore, noise reduction and silence removal is important to process the signals and save processing time and bandwidth of the system.
+
+Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. Silence removal was done through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. After the stop point is the silence and this portion is removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
+
+
 <p align="center"> 
   <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
   <br><i> Figure 1: Original (Raw) Signal 1 </i>
 </p>
 
-After pre-processing the signal, we get the following signal:
 <p align="center"> 
   <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
   <br><i>Figure 2: Normalized and Silence Removed Signal 1</i>
@@ -139,5 +140,6 @@ many milliseconds of speech are contained in a block of 256 samples?
 
 ###### Remarks:
 The computational time and space complexity of our code can be improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
+
 [Go to top](#jump_to_top)
        
