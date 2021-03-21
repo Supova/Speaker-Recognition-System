@@ -2,13 +2,6 @@ function [s_with_noise, noise] = add_noise(s, noisetype, snr)
 
     threshold = 10; % 10 dB
 
-    if nargin < 3
-        snr = 25;
-    end
-    if nargin < 2
-        noisetype = "white";
-    end
-
     % Set param
     num_samples = length(s);
     num_channels = 1;
@@ -20,10 +13,6 @@ function [s_with_noise, noise] = add_noise(s, noisetype, snr)
 
     % Scale to specified dB
     scale = db2mag(-1*snr-threshold) * max(abs(s));
-    
-    if nargin == 1
-        scale = 1/2;
-    end
     
     scale = scale / max(abs(noise)); % Normalized
     
