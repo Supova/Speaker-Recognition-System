@@ -32,9 +32,9 @@ for i = 1:n
     % [s,noise] = add_noise(s, "brown", 30); % adding 30 dB of brown noise
     
     % notch filter computations
-    % f0 = 60; % tone that needs to be removed
+    % f0 = 0.4*fs; % tone that needs to be removed
     % w0 = f0 / (fs/2);
-    % q = 30; % q factor
+    % q = 10; % q factor
     % bw = w0/q;
     % [num,den] = iirnotch(w0,bw);
     % s = filter(num,den,s); % notch filtered signal s
