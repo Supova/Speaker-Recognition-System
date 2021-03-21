@@ -15,6 +15,9 @@ function test(testdir, n, code, N, p, M)
 %       >> test('C:\Audio\Test\', 11);
 
 % read test sound file of each speaker
+
+disp("Speaker Recognition verification:");
+
 for k = 1:n                    
     file = sprintf('%ss%d.wav', testdir, k);
     [s, fs] = audioread(file);      
@@ -40,4 +43,5 @@ for k = 1:n
     % output results
     msg = sprintf('Speaker ID: %d matches with ID: %d', k, k1);
     disp(msg);
+    
 end
