@@ -75,8 +75,6 @@ After performing the STFT, the next step is to carry out mel-frequency wrapping 
   <img src=https://github.com/Supova/EEC-201/blob/main/Images/mel%20scale%20equation.jpeg>
   </p>
 
-After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance. After this, each voice utterance has been transformed into a sequence of acoustic vectors.
-
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
   <br><i>Figure 6:  Mel filter bank response 1</i>
