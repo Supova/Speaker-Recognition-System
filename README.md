@@ -6,11 +6,9 @@
 ### Team: Broketivated Engineers
 *This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG and noise addition. Training, testing, and analysis writing was done simultaneously.*
 
-## Abstract 
-In the current world situation with a pandemic and quarantine, our voices have become ever more important, literally. There is deceased identity verification through face to face or through finger prints due to communication being restricted to mostly virtual. However, just as our faces and finger prints are unique, our voices also have distinct and differentiable characteristics. Computer programs are able to identify these features better than the human ear as demonstrated in our project. We implement a speaker recognition system using pattern recognition, or feature matching, where sequences of acoustic vectors that are extracted from input speech signals are classified into individual speaker IDs. Specifically, our system is an implementation of supervised pattern recognition where the database consists of known patterns in the training set which are compared to a test set to evaluate our classification algorithm. The recognition rate of our algorithm is ___%.
-
-
 ## Introduction
+In the current world situation with a pandemic and quarantine, our voices have become ever more important, literally. There is deceased identity verification through face to face or through finger prints due to communication being restricted to mostly virtual. However, just as our faces and finger prints are unique, our voices also have distinct and differentiable characteristics. Computer programs are able to identify these features better than the human ear as demonstrated in our project. We implement a speaker recognition system using pattern recognition, or feature matching, where sequences of acoustic vectors that are extracted from input speech signals are classified into individual speaker IDs. Specifically, our system is an implementation of supervised pattern recognition where the database consists of known patterns in the training set which are compared to a test set to evaluate our classification algorithm. 
+
 There are two methods through which speaker recognition is carried out - text dependent and text independent. The text dependent speaker recognition strategy requires the speaker to provide utterances of key words or sentences, i.e. the same text is used for both training and testing. The text independent speaker recognition strategy does not rely on specific text being spoken. 
 
 Speaker Recognition has two phases: Enrollment and Recognition. 
@@ -26,7 +24,6 @@ In this project, we will be implementing the text dependent speaker recognition 
 In raw speech signals, noise is ubiquitous. The speech signal is generally contaminated by noise originating from various sources which alter the characteristics of the speech signals. It also degrades the speech quality and intelligibility. Speech signals also contain regions of silence which convey no necessary data. Therefore, noise reduction and silence removal is important to process the signals and save processing time and bandwidth of the system.
 
 Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. Outside of this portion is the silence to be removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
-
 
 <p align="center"> 
   <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
@@ -92,13 +89,18 @@ After performing the STFT, the next step is to carry out mel-frequency wrapping 
 </p>
 <br> </br>
 
-After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance. After this, each voice utterance has been transformed into a sequence of acoustic vectors. 
+After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance as shown in Figure 9. We then normalize the ceptral coefficients. After this, each voice utterance has been transformed into a sequence of acoustic vectors.
+
+<p align="center"> 
+<img src=https://github.com/Supova/EEC-201/blob/main/Images/MFCC%20Speaker1_2.PNG>
+<br><i> Figure 9: MFCCs for speaker 1 and speaker 2 </i>
+</p>
 
 In the figure below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals - observing the overlap and similarities in the dimensions.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/mfcc5_6%20speaker1_2.PNG">
-<br><i> Figure 9: MFCC space for speaker 1 and speaker 2 </i>
+<br><i> Figure 10: MFCC space for speaker 1 and speaker 2 </i>
 </p>
 
 <h3> Feature Matching </h3>
@@ -111,36 +113,28 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/VQ%20acoustic%20vector%20codeblocks.PNG">
-<br><i> Figure 10: MFCC space with centroids after VQ </i>
+<br><i> Figure 11: MFCC space with centroids after VQ </i>
 </p>
 
 <h3> Testing </h3>
 
-The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our matching results in the image below to show that our speaker recognition can recognize and verify whether two speech signals are matching. 
+The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our human recognition rate below. The matching results in Figure 12 show that our speaker recognition system can recognize and verify whether two speech signals are matching. 
 
-**compare with human rate here**
+<p align="center"> 
+Tester | Recognition Rate
+------------ | -------------
+Aakansha | 7/11
+Sadia | 5/11
+</p>
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
-<br><i> Figure 11: Matching </i>
+<br><i> Figure 12: Matching </i>
 </p>
 
-**TEST 1:**
-Play each sound file in the TRAIN folder. Can you distinguish the voices of the 11 speakers in
-the database? Next play each sound in the TEST folder in a random order without looking at the
-groundtruth and try to identify the speaker manually. Record what is your (human performance)
-recognition rate. Use this result as a later benchmark.
-* 7/11
-* 5/11
-
-**TEST 2:**
-In Matlab one can play the sound file using “sound”. Record the sampling rate and compute how
-many milliseconds of speech are contained in a block of 256 samples? 
-* sampling rate = 12.5k Hz
-* frame_duration = frame_size/fs = 256/12500 = 0.02048 m = 20.48 ms
 
 ## Acknowledgements:
-
+We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
 
 ###### Remarks:
 The computational time and space complexity of our code can be improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
