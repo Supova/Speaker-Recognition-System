@@ -122,7 +122,7 @@ The final step for our speaker recognition system is the verification. As previo
 
 <p align="center"> 
 Tester | Recognition Rate
-<br> </br>
+<\n>
 Aakansha | 6/11
 Sadia | 5/11
 </p>
