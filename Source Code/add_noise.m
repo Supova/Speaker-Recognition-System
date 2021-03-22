@@ -17,7 +17,7 @@ function [s_with_noise, noise] = add_noise(s, noisetype, snr)
     
     scale = scale / max(abs(noise)); % Normalized
     
-    noise = scale * noise;
+    noise = scale .* noise;
 
     % Add noise to output
     s_with_noise = s + noise;
