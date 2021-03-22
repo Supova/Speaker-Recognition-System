@@ -4,7 +4,7 @@
 <img src=https://www.civitaslearning.com/wp-content/uploads/2017/10/cls_signal.jpg width="1000" height="200">
 
 ### Team: Broketivated Engineers
-*This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG and noise addition. Training, testing, and analysis writing was done simultaneously.*
+*This project was undertaken by Aakansha and Sadia in a collaborative effort to implement speaker recognition using MFCC, VQ, and LBG algorithm. Sadia has worked on pre-procressing and MFCC. Aakansha has worked on LBG, noise addition, and notch filtering. Training, testing, and analysis writing was done simultaneously.*
 
 ## Introduction
 In the current world situation with a pandemic and quarantine, our voices have become ever more important, literally. There is deceased identity verification through face to face or through finger prints due to communication being restricted to mostly virtual. However, just as our faces and finger prints are unique, our voices also have distinct and differentiable characteristics. Computer programs are able to identify these features better than the human ear as demonstrated in our project. We implement a speaker recognition system using pattern recognition, or feature matching, where sequences of acoustic vectors that are extracted from input speech signals are classified into individual speaker IDs. Specifically, our system is an implementation of supervised pattern recognition where the database consists of known patterns in the training set which are compared to a test set to evaluate our classification algorithm. 
@@ -130,6 +130,13 @@ Sadia | 5/11
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
+<br><i> Figure 12: Matching </i>
+</p>
+
+We added colored noises with different SNRs to our signals to test whether our speaker recognition system works with the noise added. 
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
 <br><i> Figure 12: Matching </i>
 </p>
 
