@@ -137,12 +137,17 @@ We added colored noises with different SNRs to our signals to test whether our s
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
-<br><i> Figure 13: Whit Noise added signal </i>
+<br><i> Figure 13: White Noise added signal </i>
 </p>
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/brownnoiseaddedsig1.PNG">
 <br><i> Figure 14: Brown Noise added signal </i>
+</p>
+
+<p align="center"> 
+<img src="https://github.com/Supova/EEC-201/blob/main/Images/pinknoiseaddedsig1.PNG">
+<br><i> Figure 15: Pink Noise added signal </i>
 </p>
 
 ## Acknowledgements:
