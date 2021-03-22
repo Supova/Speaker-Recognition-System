@@ -26,19 +26,6 @@ for i = 1:n
     % read in all audio files
     [s, fs] = audioread(file);
     
-    % adding noise
-    % [s,noise] = add_noise(s, "white", 30); % adding 30 dB of white noise
-    % [s,noise] = add_noise(s, "pink", 30); % adding 30 dB of pink noise
-    % [s,noise] = add_noise(s, "brown", 30); % adding 30 dB of brown noise
-    
-    % notch filter computations
-    % f0 = 0.4*fs; % tone that needs to be removed
-    % w0 = f0 / (fs/2);
-    % q = 10; % q factor
-    % bw = w0/q;
-    % [num,den] = iirnotch(w0,bw);
-    % s = filter(num,den,s); % notch filtered signal s
-    
     % Compute MFCC
     v = mfcc(s, fs, N, p, M); 
     
