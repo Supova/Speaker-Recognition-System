@@ -26,7 +26,7 @@ for k = 1:n
     % [s,noise] = add_noise(s, "white", 30); % adding 30 dB of white noise
     % [s,noise] = add_noise(s, "pink", 30); % adding 30 dB of pink noise
     % [s,noise] = add_noise(s, "brown", 30); % adding 30 dB of brown noise
-    % [s,noise] = add_noise(s, "grey", 30); % adding 30 dB of brown noise
+    % [s,noise] = add_noise(s, "blue", 30); % adding 30 dB of brown noise
     
     % notch filter computations
     % q = 1; % q factor
