@@ -25,7 +25,7 @@ In this project, we will be implementing the text dependent speaker recognition 
 
 In raw speech signals, noise is ubiquitous. The speech signal is generally contaminated by noise originating from various sources which alter the characteristics of the speech signals. It also degrades the speech quality and intelligibility. Speech signals also contain regions of silence which convey no necessary data. Therefore, noise reduction and silence removal is important to process the signals and save processing time and bandwidth of the system.
 
-Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. After the stop point is the silence and this portion is removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
+Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. Outside of this portion is the silence to be removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
 
 
 <p align="center"> 
@@ -44,10 +44,11 @@ Speech signals are slowly-timed varying signals and when we observe their charac
 
 Computation of MFCC is done in `mfcc.m` where we first frame the signals into short chunks. Using a frame size in powers of 2 allows for faster processing time. Initial analysis was done using a frame size N = 256 samples which amounts to a frame duration of 20.48 ms. Then we apply a Hamming window to each of the frames. Windowing generates a periodic signal but also causes loss of information at the ends of the frames due to smoothening. To recover this loss, we use overlapping frames where the overlap size M = 100 samples. The discrete Fourier Transform (DFT) is then calculated on a frame by frame basis, the result of which is a periodogram. Up to this step is known as Short Time Fourier Transform (STFT). Fourier transform tells what frequencies are present in a signal, but STFT tells when these frequencies occur in the linear frequency scale.
 
-To better understand the output of STFT and its parameters, we vary the frame size and set the frame overlap to one-third of the frame size (about 33% overlap). In the first trail N = 128, the shorter time period in each frame means the spectral characteristics will be nearly constant and the time resolution is high. However, as the frame length is increased, the frequency resolution increases while the time resolution decreases. This is because if the frame is too short, it smears time-frequency distribution in the frequency dimension without a proportionate improvement in detail in the time dimension. If the frame is too long, it will fail to capture the most rapid variations of spectral content. High-frequency components will not be considered as they will be normalized over the long time-interval. So more rapidly changing spectral content need shorter frames. Thus, there is a compromise between time resolution and frequency resolution. We choose a frame length of 256 samples as the compromise for further analysis.
-<br> </br>
-STFT of Signal 1:
+The resulting spectral matrix from STFT contains the frames of the original signal in its columns. The elements are complex and symmetrical. We take the absolute value of half of the elements and plot them as shown in the figures below for Speaker 1. In Figure 3, the highest levels of energy are shown in red with black peaks which is most prominent between 0.1 and 0.25 seconds. This energy is concentrated in lower frequency range of 90-700 Hz. The majority of the signal is contained below 4.7 KHz.
 
+To better understand the output of STFT and its parameters, we vary the frame size and set the frame overlap to one-third of the frame size (about 33% overlap). In the first trial N = 128, the shorter time period in each frame means the spectral characteristics will be nearly constant and the time resolution is high. However, as the frame length is increased, the frequency resolution increases while the time resolution decreases. This is because if the frame is too short, it smears time-frequency distribution in the frequency dimension without a proportionate improvement in detail in the time dimension. If the frame is too long, it will fail to capture the most rapid variations of spectral content. High-frequency components will not be considered as they will be normalized over the long time-interval. So more rapidly changing spectral content need shorter frames. Thus, there is a compromise between time resolution and frequency resolution. We choose a frame length of 256 samples as the compromise for further analysis.
+
+<br> </br>
 <div class="row" align="center">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
@@ -66,18 +67,21 @@ STFT of Signal 1:
   <br> </br>
 </div>
 
-After performing the FFT, the next step is to carry out mel-frequency wrapping. In this process, we simulate a subjective spectrum by creating a filter bank which is spaced uniformly on the mel-scale. The mel-frequency scale is a linear frequency spacing below 1000 Hz and a logarithmic spacing above 1000 Hz. We create this spectrum because speech signals do not follow a linear scale, and hence for each tone with an actual frequency, f, a subjective pitch is to be measured and determined. 
-<br> </br>
+After performing the STFT, the next step is to carry out mel-frequency wrapping as implemented in `melfb.m`. In this process, we simulate a subjective spectrum by creating a filter bank which is spaced uniformly on the mel-scale. The mel-frequency scale is a linear frequency spacing below 1000 Hz and a logarithmic spacing above 1000 Hz. We create this spectrum because speech signals do not follow a linear scale, and hence for each tone with an actual frequency, f, a subjective pitch is to be measured and determined. 
 
-The mel-spaced filter bank response is plotted in the image below:
+20 triangular filters are equally spaced along the mel-scale defined by the equation below. The filters are spread over the whole frequency range from zero up to the Nyquist frequency of 6.25 KHz as shown in Figure 6. We can however bandlimit this frequency to avoid allocating filters to frequency regions where there is no useful signal energy. The current distribution up to Nyquist frequency is kept as there are slight variations in the frequency ranges for the different speakers. The STFT coefficients are then binned by correlating them with each filter. Each coefficient is multiplied by the corresponding filter gain and the products accumulated. The result is that each bin will hold a weighted sum representing the spectral magnitude in that filterbank channel. We then take the log of the result. The effect of the mel-frequency wrapping of signal 1 is shown in Figure 7 and 8. It is observed that the spectral shape is smoothened and amplified. This also reduces the number of coefficients to the number filterbank outputs thus achieving dimensionality reduction.
+
+<p align="center"> 
+  <img src=https://github.com/Supova/EEC-201/blob/main/Images/mel%20scale%20equation.jpeg>
+  </p>
+
+After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance. After this, each voice utterance has been transformed into a sequence of acoustic vectors.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
   <br><i>Figure 6:  Mel filter bank response 1</i>
 </p>
 <br> </br>
-
-We also computed the spectrum of the speech signal before and after the mel-frequency wrapping step is carried out and our observations are shown below: 
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
@@ -90,11 +94,9 @@ We also computed the spectrum of the speech signal before and after the mel-freq
 </p>
 <br> </br>
 
-As can be seen from the above images, the mel filter bank smooths out the original spectogram to better represent the sound. 
+After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance. After this, each voice utterance has been transformed into a sequence of acoustic vectors. 
 
-After carrying out the wrapping, we then wish to convert our speech signal back into the time domain, hence creating coefficients in time called the mel frequency cepstrum coefficients (MFCCs). We use the discrete cosine transform (DCT) to do the same and extract 14 coefficients for each time instance. Over here, we exclude the first component from the DCT since it represents the mean value of the input signal, which contains little speaker specific information, hence only extracting coefficients 2-14 (13 coefficients in total). Hence, each voice utterance has been transformed into a sequence of acoustic vectors. 
-
-In the image below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals.
+In the figure below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals - observing the overlap and similarities in the dimensions.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/mfcc5_6%20speaker1_2.PNG">
@@ -105,7 +107,7 @@ In the image below, we inspect the acoustic space (MFCC vectors) of two differen
 
 The next step in the speaker recognition process is using applying vector quantization (VQ) and the Linde-Buze-Gray (LBG) algorithm. VQ is a quantization process of data in contiguous blocks known as vectors. Quantization maps these infinite vectors into finite representative vectors. There are several techniques for quantization and the efficiency of these steps is reliant upon the generated codebooks by the training set of speech signals. Our method uses LBG algorithm to iteratively form the codebooks. First, a finite number of regions known as clusters are generated from the MFCCs. Then we partition these clusters into non-overlapping regions where every vector is represented by a corresponding centroid vector known as the code word. The code words are then grouped together to form a codebook.
 
-The recursive process of the LBG algorithm used is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
+The recursive process of the LBG algorithm used in `LBG.m` is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
 
 Below is our image of our acoustic vectors after implementing the vector quantization.
 
