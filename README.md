@@ -96,7 +96,7 @@ After carrying out the wrapping, the speech signal has to be converted back into
 <br><i> Figure 9: MFCCs for speaker 1 and speaker 2 </i>
 </p>
 
-In the figure below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals - observing the overlap and similarities in the dimensions.
+In the figure below, we inspect the acoustic space (MFCC vectors) of two different speakers (speaker 1 and 2) in a 2D plane to observe the different features of the speech signals - observing the overlap and similarities in the dimensions. Although there is some overlap, the non-overlapping portions will help distinguish the different speakers.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/mfcc5_6%20speaker1_2.PNG">
@@ -109,7 +109,7 @@ The next step in the speaker recognition process is using applying vector quanti
 
 The recursive process of the LBG algorithm used in `LBG.m` is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
 
-Below is our image of our acoustic vectors after implementing the vector quantization.
+Below is our image of our acoustic vectors after implementing the vector quantization with 8 centroids.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/VQ%20acoustic%20vector%20codeblocks.PNG">
@@ -118,7 +118,7 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <h3> Testing </h3>
 
-The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We tabulated our human recognition rate below. The matching results in Figure 12 show that our speaker recognition system can recognize and verify whether two speech signals are matching. 
+The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We first tabulate our human recognition rate below for comparison. For our speaker recognition system, we train a VQ coedebook for each speaker using `train.m`. Then using `test.m`, we verify the results. The matching results in Figure 12 show the system can recognize and verify whether two speech signals are matching with 100% accuracy. 
 
 <p align="center"> 
 Tester | Recognition Rate
@@ -132,9 +132,10 @@ Sadia | 5/11
 <br><i> Figure 12: Matching </i>
 </p>
 
-
 ## Acknowledgements:
 We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
+
+We have referenced multiple papers on MFCC and VQ for further understanding.
 
 ###### Remarks:
 The computational time and space complexity of our code can be improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
