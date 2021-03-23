@@ -124,14 +124,13 @@ The final step for our speaker recognition system is the verification. Using the
 <img src="https://user-images.githubusercontent.com/73858403/112112590-f5b8e580-8b72-11eb-996c-1224704a4517.png">
 </p>
 
+
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
 <br><i> Figure 12: Matching </i>
 </p>
 
-#### Added Noise
-
-To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with close to 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
+To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
@@ -140,13 +139,14 @@ To further test our system, colored noises with different SNRs were added to our
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112112473-d1f59f80-8b72-11eb-8e6c-9d1f9fc45546.png">
-<br><i> Figure 14: SNR values for added noise for unprocessed signals </i>
+<br><i> Figure 14:  </i>
 </p>
 
 <p align="center"> 
-<img src="https://user-images.githubusercontent.com/73858403/112112345-a5da1e80-8b72-11eb-90c8-412f4027afc2.png">
-<br><i> Figure 15: Accuracy with added noise for processed signals </i>
+<img src="https://user-images.githubusercontent.com/73858403/112199731-b10d6880-8bcb-11eb-9fdb-2b390b9a26b7.png">
+<br><i> Figure 15:  </i>
 </p>
+
 
 We observed that for the white noise, we require the most SNR to get a 100% accuracy and for the brown noise, we require the least SNR. We believe that is because white noise, being a combination of all the colored noises, is the kind of noise with the highest frequency while brown is the noise with the lowest frequency. That being said, to compensate for the high frequency noises, we require a larger signal-to-noise ratio as compared to those colored noises which have low frequency. 
 The color of sound chart shown below can be used for a more detailed understanding of why we observe these trends.
@@ -158,19 +158,21 @@ The color of sound chart shown below can be used for a more detailed understandi
 
 When we tested our signal with added noises before and after preprocessing, we observed that before preprocessing our signals, we generally require a higher SNR to achieve a 100% accuracy. This is because preprocessing our signals rids them of any unnecessary noise and information. Hence when we add noise to our signals after preprocessing them, our system only needs a smaller signal-to-noise ratio to achieve the closest resembling test signal to that of our training signal. 
 
-#### Notch Filter
+100% accuracy for white, blue, brown
+97% for pink, purple
 
-Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. 
+--- describe notch filter: 4 filters with 0.1* fs increments, 100% for Q=4 ----
+Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. 
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
-  <br><i> Figure 18: Recognition rate for different Q factors </i>
+  <br><i> Figure 18:  </i>
   </p>  
 
-We observed that the smaller the quality factor, the smaller is the recognition rate. This is because Q factor is inversely proportional to the bandwidth of the band-reject filter. Due to the small Q factor and large bandwidth, we filter out some of the useful information in our signals, hence rendering our recognition system unable to correctly identify the speaker in question. 
 
 
-## Acknowledgements:
+
+### Acknowledgements:
 We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
 
 We have referenced multiple papers on MFCC and VQ for further understanding.
