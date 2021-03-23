@@ -118,12 +118,11 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <h3> Testing </h3>
 
-The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ coedebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize and verify whether two speech signals are matching with 100% accuracy. 
+The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ codebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize all speakers with 100% accuracy. After multiple runs, our system was consistent with 100% recognition rate and did not incorrectly assign any wrong IDs.
 
-Tester | Recognition Rate
------------- | -------------
-Aakansha | 6/11
-Sadia | 5/11
+<p align="center"> 
+<img src="https://user-images.githubusercontent.com/73858403/112112590-f5b8e580-8b72-11eb-996c-1224704a4517.png">
+</p>
 
 
 <p align="center"> 
@@ -131,20 +130,39 @@ Sadia | 5/11
 <br><i> Figure 12: Matching </i>
 </p>
 
-To further test our system, colored noises with different SNRs were adde to our signals. Signal 1 with various noises are plotted below. The testing was done by
+To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
 <br><i> Figure 13: Noise added signals </i>
 </p>
 
-## Acknowledgements:
+<p align="center"> 
+<img src="https://user-images.githubusercontent.com/73858403/112112473-d1f59f80-8b72-11eb-8e6c-9d1f9fc45546.png">
+  </p>
+
+<p align="center"> 
+<img src="https://user-images.githubusercontent.com/73858403/112112345-a5da1e80-8b72-11eb-90c8-412f4027afc2.png">
+  </p>
+---Add more Analysis about results and noise (Aakansha) ----
+100% accuracy for white, blue, brown
+97% for pink, purple
+
+--- describe notch filter: 4 filters with 0.1* fs increments, 100% for Q=4 ----
+<p align="center"> 
+<img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
+  </p>  
+
+
+
+
+### Acknowledgements:
 We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
 
 We have referenced multiple papers on MFCC and VQ for further understanding.
 
 ###### Remarks:
-The computational time and space complexity of our code can be improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
+The computational time and space complexity of our code can be further improved by combining functions and processes. By using an user-defined STFT function, the preprocessing can effectively be done after the framing within this step. More efficient algorithms for silence and noise removal can be implemented for flexibility of the system.
 
 [Go to top](#jump_to_top)
        
