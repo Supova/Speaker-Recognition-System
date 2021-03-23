@@ -23,7 +23,7 @@ In this project, we will be implementing the text dependent speaker recognition 
 
 In raw speech signals, noise is ubiquitous. The speech signal is generally contaminated by noise originating from various sources which alter the characteristics of the speech signals. It also degrades the speech quality and intelligibility. Speech signals also contain regions of silence which convey no necessary data. Therefore, noise reduction and silence removal is important to process the signals and save processing time and bandwidth of the system.
 
-Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. Outside of this portion is the silence to be removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
+Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Three of our training speech signals are stereophonic (2 audio channels); however, for processing we extract a single channel from all signals for monophonic sound. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. Outside of this portion is the silence to be removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
 
 <p align="center"> 
   <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
@@ -118,22 +118,20 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <h3> Testing </h3>
 
-The final step for our speaker recognition system is the verification. As previously mentioned, we were given two data sets - test and train - and we have to ensure that the test data and the train data match by running the test data through all of our train data until the exact same speech signal is found. We first tabulate our human recognition rate below for comparison. For our speaker recognition system, we train a VQ coedebook for each speaker using `train.m`. Then using `test.m`, we verify the results. The matching results in Figure 12 show the system can recognize and verify whether two speech signals are matching with 100% accuracy. 
+The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ coedebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize and verify whether two speech signals are matching with 100% accuracy. 
 
-<p align="center"> 
 Tester | Recognition Rate
-<br> </br>
+------------ | -------------
 Aakansha | 6/11
-<br> </br>
 Sadia | 5/11
-</p>
+
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/results.PNG">
 <br><i> Figure 12: Matching </i>
 </p>
 
-We added colored noises with different SNRs to our signals to test whether our speaker recognition system works with the noise added. 
+To further test our system, colored noises with different SNRs were adde to our signals. Signal 1 with various noises are plotted below. The testing was done by
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
