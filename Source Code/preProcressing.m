@@ -15,7 +15,7 @@ function scaled_Sig = ampNormalize(signal, maxAmp)
 %                signal       Input signal
 %                maxAmp       Expected peak value (0 ~ 1)
 %     Output Parameters:  
-%                out      Scaled signal
+%                scaled_sig     Scaled signal
 
     scaled_Sig = zeros(length(signal),1);
     if( maxAmp > 1 || maxAmp < 0 )
