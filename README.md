@@ -149,7 +149,7 @@ The color of sound chart shown below can be used for a more detailed understandi
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noisechart.PNG">
-<br><i> Figure 16: Colors of Sounds Chart </i>
+<br><i> Figure 14: Colors of Sounds Chart </i>
 </p>
 
 When we tested our signal with added noises before and after preprocessing, we observed that before preprocessing our signals, we generally require a higher SNR to achieve a 100% accuracy. This is because preprocessing our signals rids them of any unnecessary noise and information. Hence when we add noise to our signals after preprocessing them, our system only needs a smaller signal-to-noise ratio to achieve the closest resembling test signal to that of our training signal. 
