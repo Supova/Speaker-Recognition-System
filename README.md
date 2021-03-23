@@ -26,12 +26,13 @@ In raw speech signals, noise is ubiquitous. The speech signal is generally conta
 Pre-processing of our signals is done in the `preProcessing.m` where we remove silence regions and normalize the amplitude to one. The input speech files contain 11 speakers uttering "zero" with a sampling rate of 12.5 KHz. Three of our training speech signals are stereophonic (2 audio channels); however, for processing we extract a single channel from all signals for monophonic sound. Speaker 1's raw speech signal is shown in Figure 1. There are periods of silence before and after the voiced segment which unnecessarily increase computational time. Therefore, the silence was removed through endpoint detection. The region where the amplitude is first greater than -30 dB (0.03) is regarded as the start of the voiced speech and the region where amplitude is first lower than -30 dB is regarded as the stop point. Outside of this portion is the silence to be removed. The signal was then normalized to an user-defined maximum amplitude, to one in our case, by dividing by the current maximum of the signal as shown in Figure 2.
 
 <p align="center"> 
-  <img src="https://github.com/Supova/EEC-201/blob/main/Images/speech_signal_speaker_1.PNG">
+  <img src="https://user-images.githubusercontent.com/73858403/112219263-fa68b280-8be1-11eb-8627-9b17ec6a4514.png">
   <br><i> Figure 1: Original (Raw) Signal 1 </i>
 </p>
 
+
 <p align="center"> 
-  <img src="https://github.com/Supova/EEC-201/blob/main/Images/Normalized_Silence%20removed%20sig1.PNG">
+  <img src="https://user-images.githubusercontent.com/73858403/112219413-2c7a1480-8be2-11eb-8f53-78003fa3a91c.png">
   <br><i>Figure 2: Normalized and Silence Removed Signal 1</i>
 </p>
 
