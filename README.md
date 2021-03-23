@@ -131,7 +131,7 @@ The final step for our speaker recognition system is the verification. Using the
 
 #### Added Noise
 
-To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
+To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with close to 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
@@ -140,7 +140,7 @@ To further test our system, colored noises with different SNRs were added to our
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112112473-d1f59f80-8b72-11eb-8e6c-9d1f9fc45546.png">
-<br><i> Figure 14: Accuracy with added noise for unprocessed signals </i>
+<br><i> Figure 14: SNR values for added noise for unprocessed signals </i>
 </p>
 
 <p align="center"> 
