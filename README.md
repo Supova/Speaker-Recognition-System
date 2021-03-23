@@ -160,7 +160,7 @@ When we tested our signal with added noises before and after preprocessing, we o
 
 #### Notch Filter
 
-Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. We observed that the smaller the quality factor, the smaller is the accuracy of testing because the smaller is the bandwidth of our filter. 
+Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. We observed that the smaller the quality factor, the smaller is the accuracy of testing because the larger is the bandwidth of our band-reject filter. 
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
