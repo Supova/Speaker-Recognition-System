@@ -115,6 +115,7 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ codebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize all speakers with 100% accuracy. After multiple runs, our system was consistent with 100% recognition rate and did not incorrectly assign any wrong IDs.
 
 <p align="center"> 
+<i> Table 1: Human recognition rate </i><br>
 <img src="https://user-images.githubusercontent.com/73858403/112112590-f5b8e580-8b72-11eb-996c-1224704a4517.png">
 </p>
 
@@ -133,14 +134,14 @@ To further test our system, colored noises with different SNRs were added to our
 </p>
 
 <p align="center"> 
+  <i> Table 2: SNR for 100% accuracy for unprocessed signals </i><br>
 <img src="https://user-images.githubusercontent.com/73858403/112204731-3e06f080-8bd1-11eb-9930-4bf75ad718b4.png">
-<br><i> Figure 14: SNR for 100% accuracy for unprocessed signals </i>
 </p>
 
 
 <p align="center"> 
+  <br><i> Table 3: Accuracy for preprocessed signals with colored noises </i><br>
 <img src="https://user-images.githubusercontent.com/73858403/112199731-b10d6880-8bcb-11eb-9fdb-2b390b9a26b7.png">
-<br><i> Figure 15: Accuracy for preprocessed signals with colored noises </i>
 </p>
 
 We observed that for the white noise, we require the most SNR to get a 100% accuracy and for the brown noise, we require the least SNR. We believe that is because white noise, being a combination of all the colored noises, is the kind of noise with the highest frequency while brown is the noise with the lowest frequency. That being said, to compensate for the high frequency noises, we require a larger signal-to-noise ratio as compared to those colored noises which have low frequency. 
@@ -158,8 +159,8 @@ When we tested our signal with added noises before and after preprocessing, we o
 Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values.
 
 <p align="center"> 
+  <i> Table 4: Recognition rate for different Q factors </i><br>
 <img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
-  <br><i> Figure 17: Recognition rate for different Q factors </i>
   </p>  
 
 We observed that the smaller the quality factor, the smaller is the recognition rate. This is because Q factor is inversely proportional to the bandwidth of the band-reject filter. Due to the small Q factor and large bandwidth, we filter out some of the useful information in our signals, hence rendering our recognition system unable to correctly identify the speaker in question.
