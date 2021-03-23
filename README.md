@@ -170,7 +170,7 @@ Notch Filters reject/attenuate signals at specific frequency tones/bands called 
 
 
 
-### Acknowledgements:
+## Acknowledgements:
 We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
 
 We have referenced multiple papers on MFCC and VQ for further understanding.
