@@ -51,17 +51,14 @@ To better understand the output of STFT and its parameters, we vary the frame si
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
      <br><i> Figure 3: N = 128, M = 42, Frames = 303 </i>
   </div>
-  <br> </br>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
     <br><i>Figure 4: N = 256, M = 86, Frames = 150 </i>    
-  </div>
-  <br> </br>                                                                                          
+  </div>                                                                                        
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
     <br><i> Figure 5: N = 512,  M = 171, Frames = 73 </i>   
   </div>
-  <br> </br>
 </div>
 
 After performing the STFT, the next step is to carry out mel-frequency wrapping as implemented in `melfb.m`. In this process, we simulate a subjective spectrum by creating a filter bank which is spaced uniformly on the mel-scale. The mel-frequency scale is a linear frequency spacing below 1000 Hz and a logarithmic spacing above 1000 Hz. We create this spectrum because speech signals do not follow a linear scale, and hence for each tone with an actual frequency, f, a subjective pitch is to be measured and determined. 
@@ -76,18 +73,16 @@ After performing the STFT, the next step is to carry out mel-frequency wrapping 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/20%20mel%20filter%20banks.PNG">
   <br><i>Figure 6:  Mel filter bank response 1</i>
 </p>
-<br> </br>
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/stft%20sig1_before%20Mel.PNG">
   <br><i>Figure 7:  Before mel-frequency wrapping</i>
 </p>
-<br> </br>
+
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20MelFreqWrap.PNG">
   <br><i>Figure 8:  After mel-frquency wrapping</i>
 </p>
-<br> </br>
 
 After carrying out the wrapping, the speech signal has to be converted back into the time domain, hence creating coefficients in time called MFCCs. We use the discrete cosine transform (DCT) extract most of the information of the signal to its lower order coefficients. The zeroth coefficient is often excluded since it represents the average log-energy of the signal, which carries little speaker-specific information. Then 13 coefficients are taken for each time instance as shown in Figure 9. We then normalize the ceptral coefficients. After this, each voice utterance has been transformed into a sequence of acoustic vectors.
 
