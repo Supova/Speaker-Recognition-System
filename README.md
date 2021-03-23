@@ -160,14 +160,14 @@ When we tested our signal with added noises before and after preprocessing, we o
 
 #### Notch Filter
 
-Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. We observed that the smaller the quality factor, the smaller is the accuracy of testing because the larger is the bandwidth of our band-reject filter. 
+Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. 
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
-  <br><i> Figure 18:  </i>
+  <br><i> Figure 18: Recognition rate for different Q factors </i>
   </p>  
 
-
+We observed that the smaller the quality factor, the smaller is the recognition rate. This is because Q factor is inversely proportional to the bandwidth of the band-reject filter. Due to the small Q factor and large bandwidth, we filter out some of the useful information in our signals, hence rendering our recognition system unable to correctly identify the speaker in question. 
 
 
 ## Acknowledgements:
