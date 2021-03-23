@@ -133,9 +133,10 @@ To further test our system, colored noises with different SNRs were added to our
 </p>
 
 <p align="center"> 
-<img src="https://user-images.githubusercontent.com/73858403/112112473-d1f59f80-8b72-11eb-8e6c-9d1f9fc45546.png">
+<img src="https://user-images.githubusercontent.com/73858403/112204731-3e06f080-8bd1-11eb-9930-4bf75ad718b4.png">
 <br><i> Figure 14: SNR for 100% accuracy for unprocessed signals </i>
 </p>
+
 
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112199731-b10d6880-8bcb-11eb-9fdb-2b390b9a26b7.png">
