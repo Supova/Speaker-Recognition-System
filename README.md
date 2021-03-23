@@ -147,8 +147,8 @@ To further test our system, colored noises with different SNRs were added to our
 <br><i> Figure 15:  </i>
 </p>
 
-We observed that for the white noise, we require the most amount of SNR to get a 100% accuracy and for the brown noise, we require the least amount of SNR. We believe that is because white noise, being a combination of all the colored noises, is the kind of noise with the highest frequency while brown is the noise with the lowest frequency. That being said, to compensate for the high frequency noises, we require a larger signal-to-noise ratio as compared to those colored noises which have low frequency. 
-We color of sound chart shown below can be used for a more detailed understanding of why we observe these trends.
+We observed that for the white noise, we require the most SNR to get a 100% accuracy and for the brown noise, we require the least SNR. We believe that is because white noise, being a combination of all the colored noises, is the kind of noise with the highest frequency while brown is the noise with the lowest frequency. That being said, to compensate for the high frequency noises, we require a larger signal-to-noise ratio as compared to those colored noises which have low frequency. 
+The color of sound chart shown below can be used for a more detailed understanding of why we observe these trends.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noisechart.PNG">
@@ -161,6 +161,8 @@ When we tested our signal with added noises before and after preprocessing, we o
 97% for pink, purple
 
 --- describe notch filter: 4 filters with 0.1* fs increments, 100% for Q=4 ----
+Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. 
+
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/73858403/112113227-c656a880-8b73-11eb-9c91-c06b9ccc5760.png">
   <br><i> Figure 18:  </i>
