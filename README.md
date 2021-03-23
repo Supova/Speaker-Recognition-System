@@ -129,7 +129,7 @@ The final step for our speaker recognition system is the verification. Using the
 <br><i> Figure 12: Matching </i>
 </p>
 
-##### Added Noise
+#### Added Noise
 
 To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
 
@@ -158,7 +158,7 @@ The color of sound chart shown below can be used for a more detailed understandi
 
 When we tested our signal with added noises before and after preprocessing, we observed that before preprocessing our signals, we generally require a higher SNR to achieve a 100% accuracy. This is because preprocessing our signals rids them of any unnecessary noise and information. Hence when we add noise to our signals after preprocessing them, our system only needs a smaller signal-to-noise ratio to achieve the closest resembling test signal to that of our training signal. 
 
-##### Notch Filter
+#### Notch Filter
 
 Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. 
 
