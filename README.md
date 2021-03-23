@@ -126,7 +126,7 @@ The final step for our speaker recognition system is the verification. Using the
 
 #### Added Noise
 
-To further test our system, colored noises with different SNRs were added to our signals. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with close to 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
+To further test our system, colored noises with different SNRs were added to our signals using `add_noise.m`. Signal 1 with various noises are plotted in Figure 13. We used white, pink, brown, blue, and purple noise. The testing was done by adding one type of noise  and varying the SNR in 10 dB increments until we got a result with close to 100% accuracy. We then decreased the SNR to find the lowest SNR that gives the highest accuracy in 30 trials. We reject a SNR level if within 5 trials, 3 trials include incorrect recognition. This method was used on unprocessed and preprocessed signals for all the noises as listed below.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/noiseaddedsig1.PNG">
@@ -156,7 +156,7 @@ When we tested our signal with added noises before and after preprocessing, we o
 
 #### Notch Filter
 
-Notch Filters reject or attenuate signals at specific frequency tones or bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values.
+Notch Filters reject or attenuate signals at specific frequency tones or bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values. The implementation was done directly in the `test.m` file.
 
 <p align="center"> 
   <i> Table 4: Recognition rate for different Q factors </i><br>
