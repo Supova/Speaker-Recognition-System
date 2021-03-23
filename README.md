@@ -45,20 +45,22 @@ The resulting spectral matrix from STFT contains the frames of the original sign
 
 To better understand the output of STFT and its parameters, we vary the frame size and set the frame overlap to one-third of the frame size (about 33% overlap). In the first trial N = 128, the shorter time period in each frame means the spectral characteristics will be nearly constant and the time resolution is high. However, as the frame length is increased, the frequency resolution increases while the time resolution decreases. This is because if the frame is too short, it smears time-frequency distribution in the frequency dimension without a proportionate improvement in detail in the time dimension. If the frame is too long, it will fail to capture the most rapid variations of spectral content. High-frequency components will not be considered as they will be normalized over the long time-interval. So more rapidly changing spectral content need shorter frames. Thus, there is a compromise between time resolution and frequency resolution. We choose a frame length of 256 samples as the compromise for further analysis.
 
-<br> </br>
 <div class="row" align="center">
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_1.PNG" alt="N = 128" ">
      <br><i> Figure 3: N = 128, M = 42, Frames = 303 </i>
   </div>
+  <br> </br>                                                                                                 
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_2.PNG" alt="N = 256" ">
     <br><i>Figure 4: N = 256, M = 86, Frames = 150 </i>    
-  </div>                                                                                        
+  </div>
+  <br> </br>
   <div class="column">
     <img src="https://github.com/Supova/EEC-201/blob/main/Images/sig1%20stft_3.PNG" alt="N = 512" ">
     <br><i> Figure 5: N = 512,  M = 171, Frames = 73 </i>   
   </div>
+  <br> </br>                                                                                                 
 </div>
 
 After performing the STFT, the next step is to carry out mel-frequency wrapping as implemented in `melfb.m`. In this process, we simulate a subjective spectrum by creating a filter bank which is spaced uniformly on the mel-scale. The mel-frequency scale is a linear frequency spacing below 1000 Hz and a logarithmic spacing above 1000 Hz. We create this spectrum because speech signals do not follow a linear scale, and hence for each tone with an actual frequency, f, a subjective pitch is to be measured and determined. 
