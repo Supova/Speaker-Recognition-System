@@ -103,7 +103,7 @@ The next step in the speaker recognition process is using applying vector quanti
 
 The recursive process of the LBG algorithm used in `LBG.m` is as follows. First a single-vector codebook, the centroid for all training vectors, is initialized. Next the size of the codebook is doubled by splitting each current codebook by adding or subtracting epsilon, the percentage of splitting. Then for each of the training vectors, the closest codeword in the current codebook is found so the vectors can be assigned to the corresponding cell associated with the closest centroid.  Finally the codeword in each cell is updated using the centroid of training vectors assigned to that cell. The iterative process of nearest-neighbor search and centroid update is repeated until the average distance between the training vectors and centroids falls below a preset threshold. Furthermore, the iteration from the doubling of the size of the codebook step to centroid update is repeated until a preset codebook size is designed. Then the loop breaks once this condition is achieved.
 
-Below is our image of our acoustic vectors after implementing the vector quantization with 8 centroids.
+Below is our image of our acoustic vectors after implementing the vector quantization with 8 centroids. There are systematic methods that can be implemented to choose the number of centroids. However, in our implementation, the number of centroids can be any number that the user chooses. The optimal number is chosen through trial and error in our case. We found that 8 centroids is a good fit that does not underfit nor overfit the clusters.
 
 <p align="center"> 
 <img src="https://github.com/Supova/EEC-201/blob/main/Images/VQ%20acoustic%20vector%20codeblocks.PNG">
@@ -112,7 +112,7 @@ Below is our image of our acoustic vectors after implementing the vector quantiz
 
 <h3> Testing </h3>
 
-The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ codebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize all speakers with 100% accuracy. After multiple runs, our system was consistent with 100% recognition rate and did not incorrectly assign any wrong IDs.
+The final step for our speaker recognition system is the verification. Using the two data sets - Training and Test - we ensure that each test speaker signal is matched correctly to a training signal. We first tabulate our human recognition rate in the table below for comparison. For our speaker recognition system, we train a VQ codebook for each speaker using `train.m`. Then using `test.m`, we verify the results. We also added our individual voices labelled as "s12" and "s13". The matching results in Figure 12 show the system can recognize all speakers with 100% accuracy. After multiple runs, our system was consistent with 100% recognition rate and did not incorrectly assign any wrong IDs. We show that indeed our system is better than the human recognition rate.
 
 <p align="center"> 
 <i> Table 1: Human recognition rate </i><br>
@@ -156,7 +156,7 @@ When we tested our signal with added noises before and after preprocessing, we o
 
 #### Notch Filter
 
-Notch Filters reject/attenuate signals at specific frequency tones/bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values.
+Notch Filters reject or attenuate signals at specific frequency tones or bands called the stop band frequency range and pass the signals above and below this band. For the purpose of our experimentation, we used four notch filters that filtered out frequency tones 1250 Hz, 2500 Hz, 3750 Hz, and 5000 Hz at different Q factor values.
 
 <p align="center"> 
   <i> Table 4: Recognition rate for different Q factors </i><br>
@@ -165,6 +165,8 @@ Notch Filters reject/attenuate signals at specific frequency tones/bands called 
 
 We observed that the smaller the quality factor, the smaller is the recognition rate. This is because Q factor is inversely proportional to the bandwidth of the band-reject filter. Due to the small Q factor and large bandwidth, we filter out some of the useful information in our signals, hence rendering our recognition system unable to correctly identify the speaker in question.
 
+## Conclusion
+From our implementation and results, we find that our speaker recognition system is fairly good. There is 100% accuracy against clean test data samples. However, our system does not tolerate a high level of noise, because the noise removal method used is not very efficient. Furthermore, the performance of the speaker recognition system is vulnerable changes in speaker characteristics. As we age, our voices vary throughout the years and sickness may also alter our voice characteristics. Another drawback of the system is that it will recognize a recorded playback of a speaker as a true identity match. This is a big security flaw if speaker recognition is used for access control. We realize that our system will need to be wary of these issues and needs to be more robust. We will continue to improve our system by taking this on as a personal project by using both MATLAB and Python. 
 
 ## Acknowledgements:
 We would like to thank Professor Z. Ding and S. Zhang for their support and explanations for the project. We would also like to acknowledge the help received from our classmates.
