@@ -15,7 +15,7 @@ Speaker Recognition has two phases: Enrollment and Recognition.
 - Enrollment: During enrollment, the speaker's voice is recorded and a number of the voice features are extracted to create a voice print that uniquely identifies the speaker. The voice print in our project is the training data that we have been provided. 
 - Recognition: During this process, the provided speaker's audio sample is compared against the created voice print and the speaker's identity is verified. The audio sample in our project is the test data that we have been provided.
 
-In this project, we will be implementing the text dependent speaker recognition strategy by the process of feature matching techniques described below. Our obejctive is to train a voice model for each of the 11 speakers in the *Training* folder and then match them to the speech files in the *Test* folder. We will vary the paramters and add noise to test the robustness of our system.
+In this project, we will be implementing the text independent speaker recognition strategy by the process of feature matching techniques described below. Our obejctive is to train a voice model for each of the 11 speakers in the *Training* folder and then match them to the speech files in the *Test* folder. We will vary the paramters and add noise to test the robustness of our system.
 
 ## Methodology 
 
